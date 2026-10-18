@@ -372,47 +372,62 @@ button {
 }
 
 /* ==========================================================================
-   2. HERO SECTION CON IMAGEN DE FONDO OFICIAL (Hero Seccion.jpg)
+   2. HERO SECTION (Banner Visual 100% Completo + Contenido & CTA)
    ========================================================================== */
 .hero-section {
   position: relative;
-  min-height: 82vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 95px 24px;
-  background-color: #F1EAE2;
-  background-image: 
-    linear-gradient(135deg, rgba(249, 247, 243, 0.42) 0%, rgba(243, 237, 229, 0.35) 50%, rgba(249, 247, 243, 0.45) 100%),
-    url('Hero Seccion.jpg'),
-    url('img/Hero Seccion.jpg'),
-    url('Hero_Seccion.jpg');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  background-color: var(--color-canvas);
   border-bottom: 1px solid var(--color-border);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-.hero-overlay {
+.hero-banner-visual {
+  position: relative;
+  width: 100%;
+  max-width: 1376px;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #F1EAE2;
+  box-shadow: 0 4px 20px rgba(74, 58, 50, 0.06);
+}
+
+.hero-banner-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1376 / 768;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.hero-banner-gradient-overlay {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.48) 0%, rgba(243, 237, 229, 0.28) 75%, rgba(243, 237, 229, 0.55) 100%);
+  height: 90px;
+  background: linear-gradient(to top, rgba(249, 247, 243, 1) 0%, rgba(249, 247, 243, 0.4) 60%, transparent 100%);
   pointer-events: none;
 }
 
-.hero-content {
+.hero-content-wrap {
   position: relative;
-  z-index: 2;
-  max-width: 840px;
-  margin: 0 auto;
-  background: radial-gradient(ellipse at center, rgba(249, 247, 243, 0.72) 0%, rgba(249, 247, 243, 0.45) 60%, transparent 100%);
-  padding: 30px 24px;
+  margin-top: -30px;
+  z-index: 5;
+  padding-bottom: 50px;
+}
+
+.hero-content-box {
+  background: #FFFFFF;
+  border: 1px solid var(--color-nude-pink);
   border-radius: var(--radius-lg);
+  padding: 38px 36px 36px;
+  text-align: center;
+  max-width: 880px;
+  margin: 0 auto;
+  box-shadow: 0 12px 35px rgba(74, 58, 50, 0.08);
 }
 
 .hero-pill {
@@ -424,12 +439,11 @@ button {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-brown-dark);
-  background: rgba(255, 255, 255, 0.95);
-  border: 1.5px solid var(--color-nude-pink);
-  padding: 8px 22px;
+  background: var(--color-nude-light);
+  border: 1px solid var(--color-nude-pink);
+  padding: 7px 20px;
   border-radius: var(--radius-full);
-  margin-bottom: 20px;
-  box-shadow: 0 4px 14px rgba(74, 58, 50, 0.12);
+  margin-bottom: 18px;
 }
 
 .hero-pill i {
@@ -438,29 +452,27 @@ button {
 
 .hero-title {
   font-family: var(--font-serif);
-  font-size: clamp(2.4rem, 5.6vw, 4.3rem);
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1.2;
   color: var(--color-brown-dark);
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   letter-spacing: -0.01em;
-  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9), 0 2px 10px rgba(249, 247, 243, 0.8);
 }
 
 .hero-title em {
   font-style: italic;
   font-weight: 400;
-  color: #6C5548;
+  color: var(--color-brown-medium);
 }
 
 .hero-description {
-  font-size: clamp(1rem, 2vw, 1.18rem);
-  color: #352822;
-  max-width: 640px;
-  margin: 0 auto 34px;
-  font-weight: 500;
+  font-size: clamp(0.98rem, 1.8vw, 1.12rem);
+  color: var(--color-brown-medium);
+  max-width: 660px;
+  margin: 0 auto 30px;
+  font-weight: 400;
   line-height: 1.7;
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95);
 }
 
 .hero-cta-group {
@@ -1382,14 +1394,17 @@ button {
     gap: 32px;
   }
 
-  .hero-section {
-    min-height: 75vh;
-    padding: 70px 20px;
-    background-position: center center;
+  .hero-banner-gradient-overlay {
+    height: 60px;
   }
 
-  .hero-content {
-    padding: 24px 18px;
+  .hero-content-wrap {
+    margin-top: -20px;
+    padding-bottom: 40px;
+  }
+
+  .hero-content-box {
+    padding: 30px 24px;
   }
 }
 
@@ -1407,37 +1422,56 @@ button {
     min-height: 44px;
   }
 
-  .hero-section {
-    min-height: 70vh;
-    padding: 55px 14px;
-    background-position: center center;
-    background-size: cover;
+  .hero-banner-visual {
+    box-shadow: none;
+    border-radius: 0;
   }
 
-  .hero-content {
-    padding: 20px 12px;
-    background: radial-gradient(ellipse at center, rgba(249, 247, 243, 0.85) 0%, rgba(249, 247, 243, 0.6) 75%, transparent 100%);
+  .hero-banner-img {
+    aspect-ratio: 1376 / 768;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    background-color: #F1EAE2;
+  }
+
+  .hero-banner-gradient-overlay {
+    height: 40px;
+  }
+
+  .hero-content-wrap {
+    margin-top: -12px;
+    padding-bottom: 35px;
+  }
+
+  .hero-content-box {
+    padding: 22px 14px 24px;
+    border-radius: var(--radius-md);
   }
 
   .hero-title {
-    font-size: 2.15rem;
-    line-height: 1.18;
+    font-size: 1.85rem;
+    line-height: 1.2;
+    margin-bottom: 12px;
   }
 
   .hero-description {
-    font-size: 0.98rem;
+    font-size: 0.92rem;
     line-height: 1.6;
-    margin-bottom: 26px;
+    margin-bottom: 22px;
   }
 
   .hero-quick-badges {
     gap: 8px;
-    margin-top: 24px;
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .hero-quick-badge-item {
     font-size: 0.76rem;
-    padding: 5px 10px;
+    padding: 7px 12px;
+    justify-content: center;
   }
 
   .collection-section {
@@ -1646,45 +1680,60 @@ button {
   </header>
 
   <!-- ========================================================================
-       2. HERO SECTION (Con imagen de fondo Hero Seccion.jpg)
+       2. HERO SECTION (Banner Visual Completo + Contenido & CTA)
        ======================================================================== -->
   <section class="hero-section" id="inicio">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <div class="hero-pill">
-        <i class="fas fa-sparkles"></i>
-        <span>Joyería Fina & Acero Inoxidable</span>
-      </div>
+    <!-- Banner con la imagen oficial completa (100% visible sin cortes en móviles y desktop) -->
+    <div class="hero-banner-visual">
+      <img 
+        src="Hero Seccion.jpg" 
+        alt="AMELIA Accesorios - Colección Exclusiva" 
+        class="hero-banner-img"
+        onerror="this.onerror=null; this.src='img/Hero Seccion.jpg';"
+      >
+      <div class="hero-banner-gradient-overlay"></div>
+    </div>
 
-      <h1 class="hero-title">Eleva Cualquier Look,<br><em>en Cualquier Momento</em></h1>
-      
-      <p class="hero-description">
-        Diseños exclusivos pensados para transmitir delicadeza, confianza y amor propio. Piezas hipoalergénicas con acabados de alta gama listas para lucir o regalar.
-      </p>
+    <!-- Bloque de Texto y Compra Directa (posicionado para no tapar los rostros y joyería) -->
+    <div class="hero-content-wrap">
+      <div class="container">
+        <div class="hero-content-box">
+          <div class="hero-pill">
+            <i class="fas fa-sparkles"></i>
+            <span>Joyería Fina & Acero Inoxidable</span>
+          </div>
 
-      <div class="hero-cta-group">
-        <a href="#zarcillos" class="btn-cta-primary">
-          <span>Explorar Colección</span>
-          <i class="fas fa-arrow-down"></i>
-        </a>
-        <a href="https://wa.me/584220575928?text=%C2%A1Hola%20AMELIA%20Accesorios!%20Quiero%20comprar%20ahora%20directamente%20por%20WhatsApp." target="_blank" rel="noopener noreferrer" class="btn-cta-whatsapp">
-          <i class="fab fa-whatsapp"></i>
-          <span>Comprar Ahora por WhatsApp</span>
-        </a>
-      </div>
+          <h1 class="hero-title">Eleva Cualquier Look,<br><em>en Cualquier Momento</em></h1>
+          
+          <p class="hero-description">
+            Diseños exclusivos pensados para transmitir delicadeza, confianza y amor propio. Piezas hipoalergénicas con acabados de alta gama listas para lucir o regalar.
+          </p>
 
-      <div class="hero-quick-badges">
-        <div class="hero-quick-badge-item">
-          <i class="fas fa-bolt"></i>
-          <span>Envío express en Caracas</span>
-        </div>
-        <div class="hero-quick-badge-item">
-          <i class="fas fa-shield-halved"></i>
-          <span>Hipoalergénico</span>
-        </div>
-        <div class="hero-quick-badge-item">
-          <i class="fas fa-box-open"></i>
-          <span>Empaque de regalo</span>
+          <div class="hero-cta-group">
+            <a href="#zarcillos" class="btn-cta-primary">
+              <span>Explorar Colección</span>
+              <i class="fas fa-arrow-down"></i>
+            </a>
+            <a href="https://wa.me/584220575928?text=%C2%A1Hola%20AMELIA%20Accesorios!%20Quiero%20comprar%20ahora%20directamente%20por%20WhatsApp." target="_blank" rel="noopener noreferrer" class="btn-cta-whatsapp">
+              <i class="fab fa-whatsapp"></i>
+              <span>Comprar Ahora por WhatsApp</span>
+            </a>
+          </div>
+
+          <div class="hero-quick-badges">
+            <div class="hero-quick-badge-item">
+              <i class="fas fa-bolt"></i>
+              <span>Envío express en Caracas (&lt;24h)</span>
+            </div>
+            <div class="hero-quick-badge-item">
+              <i class="fas fa-shield-halved"></i>
+              <span>Acero Inoxidable & Baño de Oro</span>
+            </div>
+            <div class="hero-quick-badge-item">
+              <i class="fas fa-box-open"></i>
+              <span>Empaque de regalo incluido</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1876,7 +1925,7 @@ button {
           <ul class="footer-info">
             <li><i class="fas fa-clock"></i> Atención Lun - Dom: 8:00 AM - 9:00 PM</li>
             <li><i class="fas fa-truck-fast"></i> Envíos en Caracas (&lt;24h) y toda Venezuela</li>
-            <li><i class="fas fa-shield-halved"></i> Acero Inoxidable & Baño de Calidad</li>
+            <li><i class="fas fa-shield-halved"></i> Acero Inoxidable & Baño de Oro</li>
             <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/584220575928">+58 422-0575928</a></li>
           </ul>
         </div>
