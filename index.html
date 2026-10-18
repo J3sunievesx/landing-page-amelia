@@ -3,60 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>AMELIA Accesorios | Eleva cualquier look, en cualquier momento</title>
-  <meta name="description" content="Catálogo oficial de AMELIA Accesorios. Zarcillos y joyería fina que transmiten feminidad, delicadeza, amor propio y confianza para mujeres de todas las edades.">
+  <title>AMELIA Accesorios | Joyería Fina & Boutique</title>
+  <meta name="description" content="Descubre la exclusiva colección de AMELIA Accesorios. Zarcillos y collares en acero inoxidable y materiales hipoalergénicos con empaque de regalo listo y entregas express en 24h.">
 
-  <!-- Google Fonts: Playfair Display & Montserrat -->
+  <!-- Favicon / Brand meta -->
+  <meta name="theme-color" content="#4A3A32">
+
+  <!-- Google Fonts: Playfair Display (Serif Elegante) & Montserrat (Sans-serif Moderna) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome para Iconografía -->
+  <!-- Font Awesome para Iconografía pulida -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
 /* ==========================================================================
-   AMELIA ACCESORIOS - STYLESHEET OFICIAL
-   Paleta de Colores Oficial:
-   - Fondo principal (Creamy Ivory): #FAF9F6
-   - Acentos y Detalles (Romantic Rose / Dusty Pink): #F7D6D0
-   - Tipografías secundarias (Soft Taupe / Gris Cálido): #8C827D
-   - Texto Principal (Negro Carbón): #2C2C2C
-   - Tono WhatsApp Oficial: #25D366
+   AMELIA ACCESORIOS - BRAND GUIDELINES & DESIGN SYSTEM (UI/UX PRO MAX)
+   Paleta Oficial:
+   - Fondo Principal / Lienzo: #F9F7F3 (Blanco Hueso)
+   - Superficies / Cards / Badges Suaves: #E8D9CC (Nude Claro)
+   - Acentos / Highlights / Detalles Femeninos: #D6B8A9 (Nude Rosado)
+   - Botones Secundarios / Bordes / Iconos: #A88976 (Marrón Medio)
+   - Texto Principal / Títulos / Botón Primario CTA: #4A3A32 (Marrón Oscuro)
    ========================================================================== */
 
 :root {
-  --color-bg: #FAF9F6;
+  --color-canvas: #F9F7F3;
   --color-surface: #FFFFFF;
-  --color-surface-soft: #F6F3EF;
-  --color-accent-pink: #F7D6D0;
-  --color-accent-pink-hover: #EBBAB2;
-  --color-accent-rose-deep: #D99B90;
-  --color-taupe: #8C827D;
-  --color-taupe-light: #B8B0AA;
-  --color-text-charcoal: #2C2C2C;
-  --color-border: #EFE9E2;
+  --color-nude-light: #E8D9CC;
+  --color-nude-pink: #D6B8A9;
+  --color-brown-medium: #A88976;
+  --color-brown-dark: #4A3A32;
+  --color-brown-dark-hover: #352923;
+  --color-border: rgba(168, 137, 118, 0.22);
   --color-wa: #25D366;
   --color-wa-hover: #1EBE5D;
-  --color-instagram: #E1306C;
+  --color-instagram: #C13584;
 
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-sans: 'Montserrat', system-ui, -apple-system, sans-serif;
 
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
   --radius-full: 9999px;
 
-  --shadow-subtle: 0 4px 15px rgba(0, 0, 0, 0.05);
-  --shadow-card-hover: 0 12px 30px rgba(44, 44, 44, 0.09);
-  --shadow-modal: 0 25px 60px rgba(0, 0, 0, 0.18);
+  --shadow-subtle: 0 4px 18px rgba(74, 58, 50, 0.05);
+  --shadow-card-hover: 0 12px 30px rgba(74, 58, 50, 0.12);
+  --shadow-floating: 0 8px 24px rgba(74, 58, 50, 0.16);
+  --shadow-modal: 0 25px 60px rgba(40, 30, 25, 0.28);
 
   --transition-smooth: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
-  --transition-zoom: transform 0.5s ease;
+  --transition-zoom: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-/* Reset y Base */
+/* Base & Reset */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -70,8 +73,8 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--color-bg);
-  color: var(--color-text-charcoal);
+  background-color: var(--color-canvas);
+  color: var(--color-brown-dark);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -100,26 +103,28 @@ button {
 
 .container {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
 /* ==========================================================================
-   ANNOUNCEMENT BAR
+   1. TOP ANNOUNCEMENT BAR
    ========================================================================== */
 .top-announcement {
-  background: var(--color-text-charcoal);
-  color: #FAF9F6;
+  background: var(--color-brown-dark);
+  color: var(--color-canvas);
   font-size: 0.82rem;
-  letter-spacing: 0.04em;
-  padding: 8px 16px;
+  letter-spacing: 0.03em;
+  padding: 9px 16px;
   font-weight: 500;
-  border-bottom: 1px solid rgba(247, 214, 208, 0.3);
+  border-bottom: 1px solid rgba(214, 184, 169, 0.25);
+  position: relative;
+  z-index: 1050;
 }
 
 .announcement-inner {
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -130,6 +135,17 @@ button {
 .announcement-text {
   flex-grow: 1;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.announcement-text span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .announcement-links {
@@ -140,7 +156,7 @@ button {
 }
 
 .announcement-link {
-  color: #FAF9F6;
+  color: var(--color-canvas);
   display: inline-flex;
   align-items: center;
   gap: 5px;
@@ -149,7 +165,7 @@ button {
 }
 
 .announcement-link:hover {
-  color: var(--color-accent-pink);
+  color: var(--color-nude-pink);
   opacity: 1;
 }
 
@@ -160,19 +176,19 @@ button {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(250, 249, 246, 0.96);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(249, 247, 243, 0.96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--color-border);
   transition: var(--transition-smooth);
 }
 
 .navbar-wrapper.scrolled {
-  box-shadow: 0 4px 20px rgba(44, 44, 44, 0.05);
+  box-shadow: 0 4px 20px rgba(74, 58, 50, 0.06);
 }
 
 .navbar-container {
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 12px 24px;
   display: flex;
@@ -183,13 +199,13 @@ button {
 .brand-logo-container {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   text-decoration: none;
 }
 
 .brand-logo-img {
-  height: 48px;
-  max-height: 50px;
+  height: 46px;
+  max-height: 48px;
   width: auto;
   object-fit: contain;
   border-radius: var(--radius-sm);
@@ -203,20 +219,20 @@ button {
 
 .brand-name {
   font-family: var(--font-serif);
-  font-size: 1.6rem;
+  font-size: 1.55rem;
   font-weight: 700;
-  letter-spacing: 0.05em;
-  color: var(--color-text-charcoal);
+  letter-spacing: 0.06em;
+  color: var(--color-brown-dark);
   line-height: 1;
   text-transform: uppercase;
 }
 
 .brand-sub {
   font-family: var(--font-sans);
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--color-taupe);
+  color: var(--color-brown-medium);
   font-weight: 600;
   margin-top: 3px;
 }
@@ -224,16 +240,16 @@ button {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 28px;
 }
 
 .nav-link {
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   font-weight: 500;
-  color: var(--color-text-charcoal);
+  color: var(--color-brown-dark);
   letter-spacing: 0.02em;
   position: relative;
-  padding: 4px 0;
+  padding: 6px 0;
 }
 
 .nav-link::after {
@@ -243,7 +259,7 @@ button {
   left: 0;
   width: 0%;
   height: 2px;
-  background-color: var(--color-accent-rose-deep);
+  background-color: var(--color-nude-pink);
   transition: var(--transition-smooth);
 }
 
@@ -252,76 +268,78 @@ button {
   width: 100%;
 }
 
-.nav-link:hover {
-  color: var(--color-text-charcoal);
-}
-
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
-.btn-instagram-header {
+.btn-header-ig {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background-color: #FAF4F2;
-  color: var(--color-text-charcoal);
-  border: 1px solid var(--color-accent-pink);
+  background-color: var(--color-nude-light);
+  color: var(--color-brown-dark);
+  border: 1px solid var(--color-nude-pink);
   padding: 8px 14px;
   border-radius: var(--radius-full);
-  font-size: 0.84rem;
+  font-size: 0.82rem;
   font-weight: 600;
   transition: var(--transition-smooth);
 }
 
-.btn-instagram-header i {
+.btn-header-ig i {
   color: var(--color-instagram);
-  font-size: 0.95rem;
 }
 
-.btn-instagram-header:hover {
-  background-color: var(--color-accent-pink);
+.btn-header-ig:hover {
+  background-color: var(--color-nude-pink);
   transform: translateY(-2px);
 }
 
-.btn-whatsapp-header {
+.btn-header-wa {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background-color: var(--color-wa);
-  color: #FFFFFF;
-  padding: 8px 18px;
+  background-color: var(--color-brown-dark);
+  color: var(--color-canvas);
+  padding: 9px 20px;
   border-radius: var(--radius-full);
-  font-size: 0.86rem;
+  font-size: 0.84rem;
   font-weight: 600;
   letter-spacing: 0.02em;
-  box-shadow: 0 3px 10px rgba(37, 211, 102, 0.25);
+  box-shadow: 0 4px 14px rgba(74, 58, 50, 0.15);
   transition: var(--transition-smooth);
 }
 
-.btn-whatsapp-header:hover {
-  background-color: var(--color-wa-hover);
+.btn-header-wa i {
+  color: var(--color-wa);
+  font-size: 1rem;
+}
+
+.btn-header-wa:hover {
+  background-color: var(--color-brown-dark-hover);
   transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(37, 211, 102, 0.35);
+  box-shadow: 0 6px 18px rgba(74, 58, 50, 0.22);
   color: #FFFFFF;
 }
 
 .mobile-toggle {
   display: none;
-  font-size: 1.4rem;
-  color: var(--color-text-charcoal);
-  padding: 6px;
+  font-size: 1.35rem;
+  color: var(--color-brown-dark);
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  background: var(--color-nude-light);
 }
 
 .mobile-dropdown {
   display: none;
   flex-direction: column;
-  background: #FAF9F6;
+  background: var(--color-canvas);
   border-top: 1px solid var(--color-border);
   padding: 16px 24px 22px;
-  gap: 14px;
+  gap: 12px;
 }
 
 .mobile-dropdown.open {
@@ -329,11 +347,11 @@ button {
 }
 
 .mob-link {
-  font-size: 1rem;
+  font-size: 0.98rem;
   font-weight: 500;
-  color: var(--color-text-charcoal);
+  color: var(--color-brown-dark);
   padding: 8px 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .mob-btn-wa {
@@ -341,30 +359,21 @@ button {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background-color: var(--color-wa);
-  color: #fff;
+  background-color: var(--color-brown-dark);
+  color: var(--color-canvas);
   padding: 12px;
   border-radius: var(--radius-sm);
   font-weight: 600;
-  margin-top: 6px;
+  margin-top: 4px;
 }
 
-.mob-btn-ig {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  background-color: #FAF4F2;
-  color: var(--color-text-charcoal);
-  border: 1px solid var(--color-accent-pink);
-  padding: 11px;
-  border-radius: var(--radius-sm);
-  font-weight: 600;
+.mob-btn-wa i {
+  color: var(--color-wa);
 }
 
 /* ==========================================================================
-   HERO SECTION & SLOGAN OFICIAL
-   ========================================================================= */
+   2. HERO SECTION CON IMAGEN DE FONDO OFICIAL (Hero Seccion.jpg)
+   ========================================================================== */
 .hero-section {
   position: relative;
   min-height: 82vh;
@@ -372,11 +381,16 @@ button {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 90px 24px 80px;
-  background: 
-    radial-gradient(circle at 80% 20%, rgba(247, 214, 208, 0.45) 0%, transparent 50%),
-    radial-gradient(circle at 15% 80%, rgba(247, 214, 208, 0.35) 0%, transparent 50%),
-    linear-gradient(135deg, #FAF9F6 0%, #F5F1EB 50%, #FAF9F6 100%);
+  padding: 95px 24px;
+  background-color: #F1EAE2;
+  background-image: 
+    linear-gradient(135deg, rgba(249, 247, 243, 0.42) 0%, rgba(243, 237, 229, 0.35) 50%, rgba(249, 247, 243, 0.45) 100%),
+    url('Hero Seccion.jpg'),
+    url('img/Hero Seccion.jpg'),
+    url('Hero_Seccion.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   border-bottom: 1px solid var(--color-border);
   overflow: hidden;
 }
@@ -387,62 +401,66 @@ button {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: radial-gradient(rgba(140, 130, 125, 0.09) 1px, transparent 0);
-  background-size: 32px 32px;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.48) 0%, rgba(243, 237, 229, 0.28) 75%, rgba(243, 237, 229, 0.55) 100%);
   pointer-events: none;
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 860px;
+  max-width: 840px;
   margin: 0 auto;
+  background: radial-gradient(ellipse at center, rgba(249, 247, 243, 0.72) 0%, rgba(249, 247, 243, 0.45) 60%, transparent 100%);
+  padding: 30px 24px;
+  border-radius: var(--radius-lg);
 }
 
-.hero-slogan-pill {
+.hero-pill {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-size: 0.88rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  color: var(--color-text-charcoal);
-  background: rgba(255, 255, 255, 0.9);
-  border: 1.5px solid var(--color-accent-pink);
-  padding: 9px 24px;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-brown-dark);
+  background: rgba(255, 255, 255, 0.95);
+  border: 1.5px solid var(--color-nude-pink);
+  padding: 8px 22px;
   border-radius: var(--radius-full);
-  margin-bottom: 26px;
-  box-shadow: 0 4px 14px rgba(247, 214, 208, 0.4);
+  margin-bottom: 20px;
+  box-shadow: 0 4px 14px rgba(74, 58, 50, 0.12);
 }
 
-.hero-slogan-pill i {
-  color: var(--color-accent-rose-deep);
-  font-size: 0.95rem;
+.hero-pill i {
+  color: var(--color-brown-medium);
 }
 
 .hero-title {
   font-family: var(--font-serif);
-  font-size: clamp(2.5rem, 6vw, 4.6rem);
+  font-size: clamp(2.4rem, 5.6vw, 4.3rem);
   font-weight: 700;
   line-height: 1.15;
-  color: var(--color-text-charcoal);
-  margin-bottom: 22px;
+  color: var(--color-brown-dark);
+  margin-bottom: 18px;
   letter-spacing: -0.01em;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9), 0 2px 10px rgba(249, 247, 243, 0.8);
 }
 
 .hero-title em {
   font-style: italic;
   font-weight: 400;
-  color: #4A4643;
+  color: #6C5548;
 }
 
 .hero-description {
   font-size: clamp(1rem, 2vw, 1.18rem);
-  color: var(--color-taupe);
-  max-width: 660px;
-  margin: 0 auto 38px;
-  font-weight: 400;
-  line-height: 1.75;
+  color: #352822;
+  max-width: 640px;
+  margin: 0 auto 34px;
+  font-weight: 500;
+  line-height: 1.7;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95);
 }
 
 .hero-cta-group {
@@ -453,174 +471,157 @@ button {
   flex-wrap: wrap;
 }
 
-.btn-primary-luxury {
+.btn-cta-primary {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  background-color: var(--color-text-charcoal);
-  color: #FAF9F6;
-  padding: 15px 36px;
-  border-radius: var(--radius-full);
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  box-shadow: 0 6px 20px rgba(44, 44, 44, 0.15);
-  transition: var(--transition-smooth);
-}
-
-.btn-primary-luxury:hover {
-  background-color: #1A1A1A;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(44, 44, 44, 0.25);
-  color: #FFFFFF;
-}
-
-.btn-secondary-luxury {
-  display: inline-flex;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.85);
-  color: var(--color-text-charcoal);
-  padding: 15px 30px;
+  gap: 10px;
+  background-color: var(--color-brown-dark);
+  color: var(--color-canvas);
+  padding: 15px 32px;
   border-radius: var(--radius-full);
   font-size: 0.95rem;
   font-weight: 600;
   letter-spacing: 0.03em;
-  border: 1px solid var(--color-accent-pink);
+  box-shadow: var(--shadow-floating);
   transition: var(--transition-smooth);
 }
 
-.btn-secondary-luxury:hover {
+.btn-cta-primary:hover {
+  background-color: var(--color-brown-dark-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(74, 58, 50, 0.25);
+  color: #FFFFFF;
+}
+
+.btn-cta-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   background-color: #FFFFFF;
-  border-color: var(--color-accent-rose-deep);
-  transform: translateY(-2px);
-}
-
-.hero-scroll-indicator {
-  position: absolute;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-  opacity: 0.7;
+  color: var(--color-brown-dark);
+  padding: 15px 30px;
+  border-radius: var(--radius-full);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border: 1px solid var(--color-nude-pink);
+  box-shadow: var(--shadow-subtle);
   transition: var(--transition-smooth);
 }
 
-.hero-scroll-indicator:hover {
-  opacity: 1;
+.btn-cta-whatsapp i {
+  color: var(--color-wa);
+  font-size: 1.15rem;
 }
 
-.hero-scroll-indicator .mouse {
-  display: block;
-  width: 22px;
-  height: 36px;
-  border: 2px solid var(--color-taupe);
-  border-radius: 12px;
-  position: relative;
+.btn-cta-whatsapp:hover {
+  background-color: #FAF6F2;
+  border-color: var(--color-brown-medium);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
 }
 
-.hero-scroll-indicator .mouse::after {
-  content: '';
-  position: absolute;
-  top: 6px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 4px;
-  height: 6px;
-  background: var(--color-accent-rose-deep);
-  border-radius: 2px;
-  animation: mouseScroll 1.8s infinite;
+.hero-quick-badges {
+  margin-top: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  font-size: 0.84rem;
+  color: var(--color-brown-dark);
+  font-weight: 500;
 }
 
-@keyframes mouseScroll {
-  0% { transform: translate(-50%, 0); opacity: 1; }
-  100% { transform: translate(-50%, 14px); opacity: 0; }
+.hero-quick-badge-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(168, 137, 118, 0.2);
+}
+
+.hero-quick-badge-item i {
+  color: var(--color-brown-dark);
 }
 
 /* ==========================================================================
-   SECCIÓN DE CATÁLOGO / GRID DE 20 MODELOS
+   SECCIONES DE COLECCIÓN (ESTILO BOUTIQUE MODERNA)
    ========================================================================== */
-.catalog-section {
-  padding: 90px 0;
-  background-color: var(--color-bg);
+.collection-section {
+  padding: 80px 0;
+  position: relative;
 }
 
-.section-header {
+.collection-section.alt-bg {
+  background-color: rgba(232, 217, 204, 0.25);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.section-header-centered {
   text-align: center;
-  max-width: 720px;
-  margin: 0 auto 40px;
+  max-width: 680px;
+  margin: 0 auto 38px;
 }
 
-.subheading-accent {
+.section-category-tag {
   display: inline-block;
-  font-size: 0.8rem;
-  letter-spacing: 0.25em;
+  font-size: 0.78rem;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--color-taupe);
+  color: var(--color-brown-medium);
   font-weight: 700;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
-.section-title {
+.section-heading {
   font-family: var(--font-serif);
-  font-size: clamp(2.1rem, 4.2vw, 3rem);
+  font-size: clamp(2rem, 3.8vw, 2.75rem);
   font-weight: 700;
-  color: var(--color-text-charcoal);
+  color: var(--color-brown-dark);
   line-height: 1.2;
 }
 
-.divider-gold {
-  width: 55px;
-  height: 3px;
-  background-color: var(--color-accent-pink);
-  margin: 16px auto 18px;
+.section-accent-line {
+  width: 48px;
+  height: 2px;
+  background-color: var(--color-nude-pink);
+  margin: 14px auto 16px;
   border-radius: var(--radius-full);
 }
 
-.section-desc {
-  font-size: 1.02rem;
-  color: var(--color-taupe);
-  line-height: 1.65;
+.section-subtext {
+  font-size: 0.98rem;
+  color: var(--color-brown-medium);
+  line-height: 1.6;
 }
 
-.catalog-filter-bar {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 45px;
-}
-
-.filter-buttons {
-  display: inline-flex;
-  background: #FFFFFF;
-  padding: 5px;
-  border-radius: var(--radius-full);
-  border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-subtle);
-  gap: 4px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.filter-btn {
-  padding: 9px 22px;
-  border-radius: var(--radius-full);
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--color-taupe);
-  transition: var(--transition-smooth);
-}
-
-.filter-btn.active,
-.filter-btn:hover {
-  background-color: var(--color-text-charcoal);
-  color: #FAF9F6;
-}
-
-.products-grid {
+/* PRODUCT GRID (Fila de 4 items en desktop / 2 en mobile) */
+.product-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 26px;
+  gap: 22px;
 }
 
+/* Contenedor expandible suave */
+.collapsible-container {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.6s cubic-bezier(0.25, 1, 0.3, 1), opacity 0.5s ease;
+  margin-top: 0;
+}
+
+.collapsible-container.expanded {
+  max-height: 4500px;
+  opacity: 1;
+  margin-top: 22px;
+}
+
+/* TARJETA DE PRODUCTO */
 .product-card {
   background: var(--color-surface);
   border-radius: var(--radius-md);
@@ -634,9 +635,9 @@ button {
 }
 
 .product-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
   box-shadow: var(--shadow-card-hover);
-  border-color: var(--color-accent-pink-hover);
+  border-color: var(--color-nude-pink);
 }
 
 .product-image-container {
@@ -644,10 +645,8 @@ button {
   width: 100%;
   aspect-ratio: 1 / 1.05;
   overflow: hidden;
-  background: linear-gradient(135deg, #FAF8F5 0%, #F3EEE7 100%);
+  background: linear-gradient(135deg, #FAF8F5 0%, #F1EAE2 100%);
   cursor: pointer;
-  border-top-left-radius: var(--radius-md);
-  border-top-right-radius: var(--radius-md);
 }
 
 .product-image {
@@ -661,13 +660,45 @@ button {
   transform: scale(1.08);
 }
 
+.product-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 3;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  pointer-events: none;
+}
+
+.badge-top-ventas {
+  background: var(--color-brown-dark);
+  color: var(--color-canvas);
+  box-shadow: 0 2px 6px rgba(74, 58, 50, 0.2);
+}
+
+.badge-nuevo {
+  background: var(--color-nude-pink);
+  color: var(--color-brown-dark);
+  box-shadow: 0 2px 6px rgba(168, 137, 118, 0.15);
+}
+
+.badge-exclusivo {
+  background: #FFFFFF;
+  color: var(--color-brown-dark);
+  border: 1px solid var(--color-nude-pink);
+}
+
 .product-quick-view-overlay {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(44, 44, 44, 0.32);
+  background: rgba(74, 58, 50, 0.35);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -677,12 +708,12 @@ button {
 
 .product-quick-view-btn {
   background: #FFFFFF;
-  color: var(--color-text-charcoal);
-  padding: 8px 18px;
+  color: var(--color-brown-dark);
+  padding: 8px 16px;
   border-radius: var(--radius-full);
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -699,60 +730,26 @@ button {
   transform: translateY(0);
 }
 
-.product-badge {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  z-index: 3;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: var(--radius-full);
-  pointer-events: none;
-}
-
-.badge-disponible {
-  background-color: rgba(255, 255, 255, 0.94);
-  color: #2F6F4E;
-  border: 1px solid rgba(47, 111, 78, 0.2);
-}
-
-.badge-limitada {
-  background: linear-gradient(135deg, #F7D6D0, #EBBAB2);
-  color: var(--color-text-charcoal);
-  border: 1px solid rgba(217, 155, 144, 0.4);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-}
-
-.product-info {
-  padding: 16px;
+.product-details {
+  padding: 14px 14px 16px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 
-.product-meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 6px;
-}
-
-.product-sku {
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  color: var(--color-taupe);
-  text-transform: uppercase;
+.product-ref-tag {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-brown-medium);
+  margin-bottom: 4px;
 }
 
 .product-name {
   font-family: var(--font-serif);
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 600;
-  color: var(--color-text-charcoal);
+  color: var(--color-brown-dark);
   line-height: 1.3;
   margin-bottom: 8px;
   cursor: pointer;
@@ -760,180 +757,202 @@ button {
 }
 
 .product-name:hover {
-  color: #000000;
+  color: var(--color-brown-medium);
 }
 
-.product-pricing {
+.product-price-row {
   margin-top: auto;
   padding-top: 10px;
   border-top: 1px dashed var(--color-border);
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
-.price-usd {
-  font-size: 1.12rem;
+.product-price {
+  font-size: 1.15rem;
   font-weight: 700;
-  color: var(--color-text-charcoal);
+  color: var(--color-brown-dark);
 }
 
-.btn-whatsapp-card {
+.product-guarantee-note {
+  font-size: 0.72rem;
+  color: var(--color-brown-medium);
+}
+
+.btn-order-wa {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background-color: #FAF4F2;
-  color: var(--color-text-charcoal);
-  border: 1px solid var(--color-accent-pink);
-  padding: 9px 12px;
+  background-color: var(--color-canvas);
+  color: var(--color-brown-dark);
+  border: 1px solid var(--color-nude-pink);
+  padding: 10px 12px;
   border-radius: var(--radius-sm);
   font-size: 0.84rem;
   font-weight: 600;
   transition: var(--transition-smooth);
 }
 
-.btn-whatsapp-card i {
+.btn-order-wa i {
   color: var(--color-wa);
-  font-size: 1rem;
+  font-size: 1.05rem;
   transition: var(--transition-smooth);
 }
 
-.btn-whatsapp-card:hover {
-  background-color: var(--color-wa);
-  border-color: var(--color-wa);
+.btn-order-wa:hover {
+  background-color: var(--color-brown-dark);
+  border-color: var(--color-brown-dark);
   color: #FFFFFF;
 }
 
-.btn-whatsapp-card:hover i {
+.btn-order-wa:hover i {
+  color: var(--color-canvas);
+}
+
+/* BOTÓN DESPLEGABLE / EXPANDIBLE */
+.expand-action-wrap {
+  text-align: center;
+  margin-top: 36px;
+}
+
+.btn-expand-collection {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #FFFFFF;
+  color: var(--color-brown-dark);
+  border: 1.5px solid var(--color-brown-medium);
+  padding: 13px 30px;
+  border-radius: var(--radius-full);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  box-shadow: var(--shadow-subtle);
+  transition: var(--transition-smooth);
+}
+
+.btn-expand-collection i {
+  font-size: 0.88rem;
+  transition: transform 0.35s ease;
+}
+
+.btn-expand-collection:hover {
+  background-color: var(--color-brown-dark);
   color: #FFFFFF;
+  border-color: var(--color-brown-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.btn-expand-collection.is-expanded i {
+  transform: rotate(180deg);
 }
 
 /* ==========================================================================
-   SECCIÓN SOBRE NOSOTRAS & ESENCIA DE LA MARCA
+   3. PROPUESTA DE VALOR & SELLOS DE CONFIANZA
    ========================================================================== */
-.about-section {
-  padding: 90px 0;
-  background: linear-gradient(180deg, #FAF9F6 0%, #FFFFFF 100%);
+.trust-badges-section {
+  padding: 70px 0;
+  background: linear-gradient(180deg, #F9F7F3 0%, #FFFFFF 100%);
   border-top: 1px solid var(--color-border);
 }
 
-.about-grid {
+.trust-badges-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 60px;
-  align-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
 }
 
-.about-text-content .section-title {
-  margin-bottom: 8px;
-}
-
-.about-body {
-  font-size: 1.02rem;
-  color: var(--color-taupe);
-  line-height: 1.8;
-  margin-bottom: 18px;
-}
-
-.quote-box {
-  margin-top: 24px;
-  padding: 18px 24px;
-  background-color: #FAF4F2;
-  border-left: 3px solid var(--color-accent-rose-deep);
-  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  font-family: var(--font-serif);
-  font-size: 1.15rem;
-  font-style: italic;
-  color: var(--color-text-charcoal);
-}
-
-.about-features-panel {
+.trust-badge-card {
+  background: var(--color-canvas);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 26px 20px;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-}
-
-.feature-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  background: #FAF9F6;
-  border: 1px solid var(--color-border);
-  padding: 22px;
-  border-radius: var(--radius-md);
+  align-items: center;
   transition: var(--transition-smooth);
 }
 
-.feature-card:hover {
+.trust-badge-card:hover {
   background: #FFFFFF;
-  border-color: var(--color-accent-pink-hover);
-  transform: translateX(6px);
-  box-shadow: var(--shadow-subtle);
+  border-color: var(--color-nude-pink);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
 }
 
-.feature-icon-wrapper {
-  width: 52px;
-  height: 52px;
+.trust-icon-box {
+  width: 58px;
+  height: 58px;
   border-radius: 50%;
-  background: #FAF4F2;
-  border: 1px solid var(--color-accent-pink);
+  background: var(--color-nude-light);
+  border: 1px solid var(--color-nude-pink);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.3rem;
-  color: var(--color-text-charcoal);
-  flex-shrink: 0;
+  font-size: 1.45rem;
+  color: var(--color-brown-dark);
+  margin-bottom: 16px;
+  transition: var(--transition-smooth);
 }
 
-.feature-text h4 {
+.trust-badge-card:hover .trust-icon-box {
+  background: var(--color-brown-dark);
+  color: var(--color-canvas);
+  transform: scale(1.05);
+}
+
+.trust-card-title {
   font-family: var(--font-serif);
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--color-text-charcoal);
-  margin-bottom: 5px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-brown-dark);
+  margin-bottom: 6px;
 }
 
-.feature-text p {
-  font-size: 0.9rem;
-  color: var(--color-taupe);
+.trust-card-desc {
+  font-size: 0.85rem;
+  color: var(--color-brown-medium);
   line-height: 1.5;
 }
 
 /* ==========================================================================
-   BANNER CALL TO ACTION
+   CALL TO ACTION BANNER FINAL
    ========================================================================== */
 .cta-banner-section {
-  padding: 30px 0 70px;
+  padding: 20px 0 60px;
 }
 
 .cta-banner-card {
-  background: linear-gradient(135deg, #2C2C2C 0%, #3D3734 100%);
+  background: linear-gradient(135deg, #4A3A32 0%, #352923 100%);
   border-radius: var(--radius-lg);
-  padding: 44px 50px;
+  padding: 42px 46px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 30px;
-  box-shadow: 0 15px 35px rgba(44, 44, 44, 0.15);
-  border: 1px solid rgba(247, 214, 208, 0.3);
+  box-shadow: var(--shadow-floating);
+  border: 1px solid rgba(214, 184, 169, 0.35);
 }
 
 .cta-banner-text h3 {
   font-family: var(--font-serif);
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
   color: #FFFFFF;
   margin-bottom: 8px;
 }
 
 .cta-banner-text p {
-  color: #D6D0CB;
-  font-size: 0.96rem;
+  color: var(--color-nude-light);
+  font-size: 0.95rem;
   max-width: 580px;
 }
 
-.btn-whatsapp-large {
+.btn-whatsapp-banner {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -941,14 +960,14 @@ button {
   color: #FFFFFF;
   padding: 15px 28px;
   border-radius: var(--radius-full);
-  font-size: 1rem;
+  font-size: 0.98rem;
   font-weight: 600;
   white-space: nowrap;
   box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
   transition: var(--transition-smooth);
 }
 
-.btn-whatsapp-large:hover {
+.btn-whatsapp-banner:hover {
   background-color: var(--color-wa-hover);
   transform: translateY(-2px);
   box-shadow: 0 10px 24px rgba(37, 211, 102, 0.5);
@@ -958,18 +977,18 @@ button {
 /* ==========================================================================
    FOOTER OFICIAL
    ========================================================================== */
-.footer-luxury {
-  background-color: #242220;
-  color: #ECE7E2;
-  padding: 70px 0 30px;
-  border-top: 1px solid rgba(247, 214, 208, 0.25);
+.footer-boutique {
+  background-color: #2F241F;
+  color: #E8D9CC;
+  padding: 60px 0 28px;
+  border-top: 1px solid rgba(214, 184, 169, 0.2);
 }
 
 .footer-top {
   display: grid;
   grid-template-columns: 1.5fr 1fr 1.3fr;
-  gap: 50px;
-  margin-bottom: 50px;
+  gap: 40px;
+  margin-bottom: 40px;
 }
 
 .footer-logo {
@@ -979,22 +998,22 @@ button {
 }
 
 .footer-logo-img {
-  height: 44px;
+  height: 42px;
   width: auto;
   border-radius: var(--radius-sm);
-  background: #FAF9F6;
+  background: var(--color-canvas);
   padding: 2px;
 }
 
 .footer-logo .brand-name {
-  color: #FAF9F6;
+  color: var(--color-canvas);
 }
 
 .footer-bio {
-  font-size: 0.92rem;
-  color: #B5AFA8;
+  font-size: 0.9rem;
+  color: #D6B8A9;
   line-height: 1.6;
-  margin: 16px 0 22px;
+  margin: 14px 0 20px;
   max-width: 380px;
 }
 
@@ -1011,24 +1030,24 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #FAF9F6;
+  color: var(--color-canvas);
   font-size: 1.1rem;
   border: 1px solid rgba(255, 255, 255, 0.12);
   transition: var(--transition-smooth);
 }
 
 .social-icon:hover {
-  background-color: var(--color-accent-pink);
-  color: var(--color-text-charcoal);
+  background-color: var(--color-nude-pink);
+  color: var(--color-brown-dark);
   transform: translateY(-3px);
-  border-color: var(--color-accent-pink);
+  border-color: var(--color-nude-pink);
 }
 
 .footer-title {
   font-family: var(--font-serif);
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   color: #FFFFFF;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   letter-spacing: 0.04em;
   position: relative;
   display: inline-block;
@@ -1039,26 +1058,26 @@ button {
   position: absolute;
   bottom: -6px;
   left: 0;
-  width: 32px;
+  width: 30px;
   height: 2px;
-  background: var(--color-accent-pink);
+  background: var(--color-nude-pink);
 }
 
 .footer-links {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .footer-links a {
-  font-size: 0.9rem;
-  color: #B5AFA8;
+  font-size: 0.88rem;
+  color: #D6B8A9;
   transition: var(--transition-smooth);
 }
 
 .footer-links a:hover {
-  color: var(--color-accent-pink);
+  color: #FFFFFF;
   padding-left: 4px;
 }
 
@@ -1066,41 +1085,41 @@ button {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  font-size: 0.9rem;
-  color: #B5AFA8;
+  gap: 12px;
+  font-size: 0.88rem;
+  color: #D6B8A9;
 }
 
 .footer-info li {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .footer-info i {
-  color: var(--color-accent-pink);
+  color: var(--color-nude-pink);
   width: 18px;
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
 .footer-info a {
-  color: #D6D0CB;
+  color: #E8D9CC;
 }
 
 .footer-info a:hover {
-  color: var(--color-accent-pink);
+  color: #FFFFFF;
 }
 
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: 26px;
+  padding-top: 24px;
   text-align: center;
-  font-size: 0.85rem;
-  color: #8C827D;
+  font-size: 0.82rem;
+  color: #A88976;
 }
 
 /* ==========================================================================
-   MODAL / LIGHTBOX DE VISTA PREVIA
+   MODAL / LIGHTBOX DE PRODUCTO
    ========================================================================== */
 .modal-overlay {
   position: fixed;
@@ -1108,14 +1127,14 @@ button {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(20, 20, 20, 0.8);
+  background-color: rgba(30, 22, 18, 0.75);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   z-index: 2000;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 20px;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -1127,9 +1146,9 @@ button {
 }
 
 .modal-container {
-  background: #FAF9F6;
+  background: var(--color-canvas);
   border-radius: var(--radius-lg);
-  max-width: 900px;
+  max-width: 860px;
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
@@ -1137,7 +1156,7 @@ button {
   box-shadow: var(--shadow-modal);
   transform: scale(0.95);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  border: 1px solid rgba(247, 214, 208, 0.4);
+  border: 1px solid var(--color-nude-pink);
 }
 
 .modal-overlay.active .modal-container {
@@ -1146,14 +1165,14 @@ button {
 
 .modal-close-btn {
   position: absolute;
-  top: 16px;
-  right: 18px;
+  top: 14px;
+  right: 16px;
   z-index: 10;
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.9);
-  color: var(--color-text-charcoal);
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--color-brown-dark);
   font-size: 1.1rem;
   display: flex;
   align-items: center;
@@ -1163,8 +1182,8 @@ button {
 }
 
 .modal-close-btn:hover {
-  background-color: var(--color-text-charcoal);
-  color: #FAF9F6;
+  background-color: var(--color-brown-dark);
+  color: var(--color-canvas);
 }
 
 .modal-content-grid {
@@ -1174,18 +1193,18 @@ button {
 
 .modal-image-col {
   position: relative;
-  background: #F3EEE7;
+  background: #F1EAE2;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  min-height: 380px;
+  min-height: 360px;
 }
 
 .modal-badge {
   position: absolute;
-  top: 18px;
-  left: 18px;
+  top: 16px;
+  left: 16px;
   z-index: 2;
   font-size: 0.72rem;
   font-weight: 700;
@@ -1193,8 +1212,8 @@ button {
   text-transform: uppercase;
   padding: 4px 12px;
   border-radius: var(--radius-full);
-  background: #FFFFFF;
-  color: var(--color-text-charcoal);
+  background: var(--color-brown-dark);
+  color: var(--color-canvas);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
@@ -1202,74 +1221,73 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease;
 }
 
 .modal-info-col {
-  padding: 40px 36px;
+  padding: 36px 32px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.modal-sku {
-  font-size: 0.78rem;
-  letter-spacing: 0.15em;
-  color: var(--color-taupe);
+.modal-ref {
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  color: var(--color-brown-medium);
   font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .modal-title {
   font-family: var(--font-serif);
-  font-size: 2rem;
+  font-size: 1.85rem;
   font-weight: 700;
-  color: var(--color-text-charcoal);
-  line-height: 1.2;
-  margin-bottom: 14px;
+  color: var(--color-brown-dark);
+  line-height: 1.25;
+  margin-bottom: 12px;
 }
 
 .modal-price-box {
   display: flex;
   align-items: baseline;
-  gap: 14px;
-  margin-bottom: 20px;
-  padding-bottom: 16px;
+  gap: 12px;
+  margin-bottom: 18px;
+  padding-bottom: 14px;
   border-bottom: 1px solid var(--color-border);
 }
 
 .modal-price-box .price-usd {
-  font-size: 1.6rem;
+  font-size: 1.65rem;
   font-weight: 700;
-  color: var(--color-text-charcoal);
+  color: var(--color-brown-dark);
 }
 
 .modal-description {
-  font-size: 0.95rem;
-  color: var(--color-taupe);
+  font-size: 0.92rem;
+  color: var(--color-brown-medium);
   line-height: 1.65;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
 
 .modal-specs {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 28px;
+  gap: 9px;
+  margin-bottom: 24px;
 }
 
 .spec-item {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 0.85rem;
-  color: var(--color-text-charcoal);
+  font-size: 0.84rem;
+  color: var(--color-brown-dark);
 }
 
 .spec-item i {
-  color: var(--color-accent-rose-deep);
-  font-size: 0.95rem;
+  color: var(--color-brown-medium);
+  font-size: 0.9rem;
 }
 
 .btn-whatsapp-modal {
@@ -1277,29 +1295,34 @@ button {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background-color: var(--color-wa);
-  color: #FFFFFF;
+  background-color: var(--color-brown-dark);
+  color: var(--color-canvas);
   padding: 14px 22px;
   border-radius: var(--radius-sm);
-  font-size: 0.98rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+  box-shadow: 0 4px 15px rgba(74, 58, 50, 0.2);
   transition: var(--transition-smooth);
 }
 
+.btn-whatsapp-modal i {
+  color: var(--color-wa);
+  font-size: 1.2rem;
+}
+
 .btn-whatsapp-modal:hover {
-  background-color: var(--color-wa-hover);
+  background-color: var(--color-brown-dark-hover);
   transform: translateY(-2px);
   color: #FFFFFF;
 }
 
 /* ==========================================================================
-   BOTÓN FLOTANTE PERMANENTE
+   BOTÓN FLOTANTE PERMANENTE DE WHATSAPP
    ========================================================================== */
 .floating-wa {
   position: fixed;
-  bottom: 26px;
-  right: 26px;
+  bottom: 24px;
+  right: 24px;
   z-index: 999;
   width: 58px;
   height: 58px;
@@ -1309,8 +1332,8 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.8rem;
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+  font-size: 1.85rem;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
   transition: var(--transition-smooth);
 }
 
@@ -1322,11 +1345,11 @@ button {
 
 .tooltip-wa {
   position: absolute;
-  right: 68px;
-  background: var(--color-text-charcoal);
-  color: #FAF9F6;
+  right: 70px;
+  background: var(--color-brown-dark);
+  color: var(--color-canvas);
   font-size: 0.78rem;
-  padding: 5px 12px;
+  padding: 6px 14px;
   border-radius: var(--radius-full);
   white-space: nowrap;
   pointer-events: none;
@@ -1341,64 +1364,88 @@ button {
 }
 
 /* ==========================================================================
-   REGLAS TÉCNICAS & RESPONSIVE DESIGN (Mobile-First Estricto)
+   4. AUDITORÍA DE CALIDAD & RESPONSIVE DESIGN (MOBILE-FIRST TEST)
    ========================================================================== */
 @media (max-width: 1024px) {
-  .products-grid {
+  .product-grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 18px;
   }
 
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .trust-badges-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
   }
 
   .footer-top {
     grid-template-columns: 1fr 1fr;
-    gap: 36px;
+    gap: 32px;
+  }
+
+  .hero-section {
+    min-height: 75vh;
+    padding: 70px 20px;
+    background-position: center center;
+  }
+
+  .hero-content {
+    padding: 24px 18px;
   }
 }
 
 @media (max-width: 768px) {
   .nav-links, 
-  .btn-whatsapp-header,
-  .btn-instagram-header,
+  .btn-header-wa,
+  .btn-header-ig,
   .announcement-links {
     display: none;
   }
 
   .mobile-toggle {
     display: block;
-  }
-
-  .brand-logo-img {
-    height: 40px;
-  }
-
-  .brand-name {
-    font-size: 1.35rem;
+    min-width: 44px;
+    min-height: 44px;
   }
 
   .hero-section {
     min-height: 70vh;
-    padding: 60px 16px;
+    padding: 55px 14px;
+    background-position: center center;
+    background-size: cover;
   }
 
-  .hero-slogan-pill {
-    font-size: 0.78rem;
-    padding: 7px 18px;
+  .hero-content {
+    padding: 20px 12px;
+    background: radial-gradient(ellipse at center, rgba(249, 247, 243, 0.85) 0%, rgba(249, 247, 243, 0.6) 75%, transparent 100%);
   }
 
   .hero-title {
-    font-size: 2.2rem;
+    font-size: 2.15rem;
+    line-height: 1.18;
   }
 
-  .catalog-section {
+  .hero-description {
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin-bottom: 26px;
+  }
+
+  .hero-quick-badges {
+    gap: 8px;
+    margin-top: 24px;
+  }
+
+  .hero-quick-badge-item {
+    font-size: 0.76rem;
+    padding: 5px 10px;
+  }
+
+  .collection-section {
     padding: 50px 0;
   }
 
-  .products-grid {
+  /* 2 COLUMNAS ESTRICTAS EN MÓVIL SIN SCROLL HORIZONTAL */
+  .product-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 12px;
   }
@@ -1407,45 +1454,74 @@ button {
     padding: 0 12px;
   }
 
-  .product-info {
-    padding: 12px 10px;
+  .product-details {
+    padding: 10px 8px;
   }
 
   .product-name {
-    font-size: 0.98rem;
-    margin-bottom: 6px;
+    font-size: 0.94rem;
+    margin-bottom: 4px;
+    line-height: 1.25;
   }
 
-  .price-usd {
-    font-size: 0.95rem;
+  .product-price {
+    font-size: 1.05rem;
   }
 
-  .btn-whatsapp-card {
-    padding: 7px 8px;
+  .product-guarantee-note {
+    font-size: 0.68rem;
+  }
+
+  .btn-order-wa {
+    min-height: 44px;
+    padding: 8px 6px;
     font-size: 0.76rem;
-    gap: 5px;
   }
 
-  .btn-whatsapp-card span {
-    display: inline;
-  }
-
-  .product-badge {
-    font-size: 0.6rem;
-    padding: 3px 7px;
-    top: 8px;
-    left: 8px;
+  .btn-cta-primary,
+  .btn-cta-whatsapp {
+    min-height: 46px;
+    width: 100%;
+    justify-content: center;
+    font-size: 0.92rem;
   }
 
   .cta-banner-card {
     flex-direction: column;
     text-align: center;
-    padding: 30px 20px;
+    padding: 28px 18px;
+    gap: 20px;
+  }
+
+  .cta-banner-text h3 {
+    font-size: 1.5rem;
+  }
+
+  .btn-whatsapp-banner {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .trust-badges-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .trust-badge-card {
+    padding: 18px 10px;
+  }
+
+  .trust-card-title {
+    font-size: 0.95rem;
+  }
+
+  .trust-card-desc {
+    font-size: 0.78rem;
   }
 
   .footer-top {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 26px;
   }
 
   .modal-content-grid {
@@ -1453,75 +1529,81 @@ button {
   }
 
   .modal-image-col {
-    min-height: 280px;
-    max-height: 340px;
+    min-height: 260px;
+    max-height: 320px;
   }
 
   .modal-info-col {
-    padding: 24px 18px;
+    padding: 22px 18px;
   }
 
   .modal-title {
-    font-size: 1.5rem;
+    font-size: 1.45rem;
   }
 
   .floating-wa {
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    font-size: 1.5rem;
+    bottom: 18px;
+    right: 18px;
+    width: 52px;
+    height: 52px;
+    font-size: 1.6rem;
   }
 }
 
 @media (max-width: 400px) {
-  .btn-whatsapp-card span {
+  .product-name {
+    font-size: 0.86rem;
+  }
+
+  .product-badge {
+    font-size: 0.58rem;
+    padding: 3px 6px;
+  }
+
+  .btn-order-wa span {
     font-size: 0.72rem;
   }
-  
-  .product-name {
-    font-size: 0.92rem;
-  }
 
-  .brand-logo-img {
-    height: 34px;
-  }
-
-  .brand-name {
-    font-size: 1.2rem;
+  .hero-title {
+    font-size: 1.85rem;
   }
 }
   </style>
 </head>
 <body>
 
-  <!-- Barra de Notificación Superior con Enlaces Oficiales -->
-  <div class="top-announcement">
+  <!-- ========================================================================
+       1. TOP BAR / ANNOUNCEMENT BAR
+       ======================================================================== -->
+  <aside class="top-announcement" aria-label="Anuncio de servicio">
     <div class="announcement-inner">
       <div class="announcement-text">
-        <span>✨ <strong>AMELIA Accesorios</strong> | “Eleva cualquier look, en cualquier momento.”</span>
+        <span><i class="fas fa-truck-fast"></i> Entregas express en menos de 24h en Caracas</span>
+        <span class="desktop-only-sep">|</span>
+        <span><i class="fas fa-gift"></i> Todos los pedidos incluyen empaque listo para regalar</span>
       </div>
       <div class="announcement-links">
-        <a href="https://instagram.com/Ameliaccsrs_shop" target="_blank" rel="noopener noreferrer" class="announcement-link" title="Instagram oficial">
+        <a href="https://instagram.com/Ameliaccsrs_shop" target="_blank" rel="noopener noreferrer" class="announcement-link" title="Instagram Oficial">
           <i class="fab fa-instagram"></i> @Ameliaccsrs_shop
         </a>
-        <a href="https://wa.me/584220575928?text=%C2%A1Hola!%20Deseo%20informaci%C3%B3n%20sobre%20la%20colecci%C3%B3n%20de%20AMELIA%20Accesorios." target="_blank" rel="noopener noreferrer" class="announcement-link" title="WhatsApp oficial">
+        <a href="https://wa.me/584220575928?text=%C2%A1Hola%20AMELIA!%20Deseo%20informaci%C3%B3n%20sobre%20su%20colecci%C3%B3n." target="_blank" rel="noopener noreferrer" class="announcement-link" title="WhatsApp Oficial">
           <i class="fab fa-whatsapp"></i> +58 422-0575928
         </a>
       </div>
     </div>
-  </div>
+  </aside>
 
-  <!-- Header / Navbar Flotante con Logo Oficial -->
+  <!-- ========================================================================
+       HEADER / NAVBAR FLOTANTE
+       ======================================================================== -->
   <header class="navbar-wrapper" id="navbar">
     <div class="navbar-container">
-      <a href="#inicio" class="brand-logo-container">
-        <!-- Logo Oficial ubicado en img/ -->
+      <a href="#inicio" class="brand-logo-container" aria-label="AMELIA Accesorios Inicio">
         <img 
           src="Logo_Amelia_accesorios.png" 
-          alt="Logo Oficial AMELIA Accesorios" 
+          alt="Logo AMELIA Accesorios" 
           class="brand-logo-img"
-          onerror="this.onerror=null; this.src='Logo_Amelia accesorios.jpg';"
+          onerror="this.onerror=null; this.src='img/Logo_Amelia_accesorios.png';"
         >
         <div class="brand-text-block">
           <span class="brand-name">AMELIA</span>
@@ -1529,240 +1611,286 @@ button {
         </div>
       </a>
 
-      <!-- Navegación Escritorio -->
-      <nav class="nav-links">
+      <nav class="nav-links" aria-label="Navegación principal">
         <a href="#inicio" class="nav-link active">Inicio</a>
-        <a href="#catalogo" class="nav-link">Colección</a>
-        <a href="#nosotras" class="nav-link">Propósito</a>
-        <a href="#contacto" class="nav-link">Contacto</a>
+        <a href="#zarcillos" class="nav-link">Zarcillos</a>
+        <a href="#collares" class="nav-link">Collares & Cadenitas</a>
+        <a href="#garantia" class="nav-link">Calidad & Confianza</a>
       </nav>
 
-      <!-- Botones de Acción (Instagram & WhatsApp) -->
       <div class="nav-actions">
-        <a href="https://instagram.com/Ameliaccsrs_shop" target="_blank" rel="noopener noreferrer" class="btn-instagram-header" title="Síguenos en Instagram @Ameliaccsrs_shop">
+        <a href="https://instagram.com/Ameliaccsrs_shop" target="_blank" rel="noopener noreferrer" class="btn-header-ig" title="Instagram @Ameliaccsrs_shop">
           <i class="fab fa-instagram"></i>
-          <span>@Ameliaccsrs_shop</span>
+          <span>Instagram</span>
         </a>
-        <a href="https://wa.me/584220575928?text=%C2%A1Hola!%20Deseo%20informaci%C3%B3n%20sobre%20la%20colecci%C3%B3n%20de%20AMELIA%20Accesorios." target="_blank" rel="noopener noreferrer" class="btn-whatsapp-header" title="Escríbenos a WhatsApp">
+        <a href="https://wa.me/584220575928?text=%C2%A1Hola%20AMELIA!%20Me%20gustar%C3%ADa%20hacer%20un%20pedido." target="_blank" rel="noopener noreferrer" class="btn-header-wa">
           <i class="fab fa-whatsapp"></i>
-          <span>WhatsApp</span>
+          <span>Pedir por WhatsApp</span>
         </a>
-        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Abrir menú de navegación">
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Abrir menú">
           <i class="fas fa-bars"></i>
         </button>
       </div>
     </div>
 
-    <!-- Menú Desplegable Móvil -->
+    <!-- Menú Móvil -->
     <div class="mobile-dropdown" id="mobileDropdown">
       <a href="#inicio" class="mob-link">Inicio</a>
-      <a href="#catalogo" class="mob-link">Colección</a>
-      <a href="#nosotras" class="mob-link">Propósito & Marca</a>
-      <a href="#contacto" class="mob-link">Contacto</a>
-      <a href="https://instagram.com/Ameliaccsrs_shop" target="_blank" rel="noopener noreferrer" class="mob-btn-ig">
-        <i class="fab fa-instagram"></i> @Ameliaccsrs_shop en Instagram
-      </a>
-      <a href="https://wa.me/584220575928?text=%C2%A1Hola!%20Deseo%20informaci%C3%B3n%20sobre%20la%20colecci%C3%B3n%20de%20AMELIA%20Accesorios." target="_blank" rel="noopener noreferrer" class="mob-btn-wa">
-        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp (+58 422-0575928)
+      <a href="#zarcillos" class="mob-link">Zarcillos (Top & Colección)</a>
+      <a href="#collares" class="mob-link">Collares & Cadenitas</a>
+      <a href="#garantia" class="mob-link">Garantía & Envíos</a>
+      <a href="https://wa.me/584220575928?text=%C2%A1Hola%20AMELIA!%20Deseo%20ver%20la%20colecci%C3%B3n." target="_blank" rel="noopener noreferrer" class="mob-btn-wa">
+        <i class="fab fa-whatsapp"></i> Comprar Ahora por WhatsApp
       </a>
     </div>
   </header>
 
-  <!-- Hero Section con Slogan Oficial Visible -->
+  <!-- ========================================================================
+       2. HERO SECTION (Con imagen de fondo Hero Seccion.jpg)
+       ======================================================================== -->
   <section class="hero-section" id="inicio">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <div class="hero-slogan-pill">
+      <div class="hero-pill">
         <i class="fas fa-sparkles"></i>
-        <span>“Eleva cualquier look, en cualquier momento.”</span>
+        <span>Joyería Fina & Acero Inoxidable</span>
       </div>
 
-      <h1 class="hero-title">Elegancia, Delicadeza y Brillo<br><em>en Cada Momento</em></h1>
+      <h1 class="hero-title">Eleva Cualquier Look,<br><em>en Cualquier Momento</em></h1>
       
       <p class="hero-description">
-        Joyas y accesorios diseñados para inspirar <strong>amor propio, feminidad y confianza</strong>. Piezas versátiles pensadas con cariño tanto para jóvenes que descubren su estilo como para mujeres adultas y contemporáneas que valoran la distinción.
+        Diseños exclusivos pensados para transmitir delicadeza, confianza y amor propio. Piezas hipoalergénicas con acabados de alta gama listas para lucir o regalar.
       </p>
 
       <div class="hero-cta-group">
-        <a href="#catalogo" class="btn-primary-luxury">
+        <a href="#zarcillos" class="btn-cta-primary">
           <span>Explorar Colección</span>
-          <i class="fas fa-arrow-right"></i>
+          <i class="fas fa-arrow-down"></i>
         </a>
-        <a href="https://wa.me/584220575928?text=%C2%A1Hola!%20Me%20encantar%C3%ADa%20ver%20los%20modelos%20disponibles%20de%20AMELIA%20Accesorios." target="_blank" rel="noopener noreferrer" class="btn-secondary-luxury">
-          <i class="fab fa-whatsapp" style="color: var(--color-wa); margin-right: 8px;"></i>
-          <span>Asesoría Directa</span>
+        <a href="https://wa.me/584220575928?text=%C2%A1Hola%20AMELIA%20Accesorios!%20Quiero%20comprar%20ahora%20directamente%20por%20WhatsApp." target="_blank" rel="noopener noreferrer" class="btn-cta-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+          <span>Comprar Ahora por WhatsApp</span>
         </a>
       </div>
-    </div>
 
-    <div class="hero-scroll-indicator">
-      <a href="#catalogo" aria-label="Desplazarse al catálogo">
-        <span class="mouse"></span>
-      </a>
+      <div class="hero-quick-badges">
+        <div class="hero-quick-badge-item">
+          <i class="fas fa-bolt"></i>
+          <span>Envío express en Caracas</span>
+        </div>
+        <div class="hero-quick-badge-item">
+          <i class="fas fa-shield-halved"></i>
+          <span>Hipoalergénico</span>
+        </div>
+        <div class="hero-quick-badge-item">
+          <i class="fas fa-box-open"></i>
+          <span>Empaque de regalo</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Sección de Catálogo / 20 Modelos -->
-  <section class="catalog-section" id="catalogo">
+  <!-- ========================================================================
+       3. SECCIÓN 1: TOP 4 ZARCILLOS MÁS VENDIDOS (+ DESPLEGABLE)
+       ======================================================================== -->
+  <section class="collection-section" id="zarcillos">
     <div class="container">
-      <div class="section-header">
-        <span class="subheading-accent">Catálogo Oficial</span>
-        <h2 class="section-title">Nuestra Colección de Zarcillos</h2>
-        <div class="divider-gold"></div>
-        <p class="section-desc">
-          Efecto boutique con acabados impecables. Haz clic sobre cualquier tarjeta o fotografía para verla ampliada en detalle o pedirla vía WhatsApp.
+      <div class="section-header-centered">
+        <span class="section-category-tag">Categoría Estrella</span>
+        <h2 class="section-heading">Top Zarcillos Más Vendidos</h2>
+        <div class="section-accent-line"></div>
+        <p class="section-subtext">
+          Nuestras 4 piezas más aclamadas por su ligereza y brillo deslumbrante. Haz clic en cualquier modelo para ampliarlo o pedirlo directamente.
         </p>
       </div>
 
-      <div class="catalog-filter-bar">
-        <div class="filter-buttons">
-          <button class="filter-btn active" data-filter="all">Todos los Modelos (20)</button>
-          <button class="filter-btn" data-filter="limitada">Edición Limitada</button>
-          <button class="filter-btn" data-filter="disponible">Disponibles</button>
+      <!-- Grid Top 4 Zarcillos (Fila de 4) -->
+      <div class="product-grid" id="topZarcillosGrid">
+        <!-- Renderizado dinámico vía JS -->
+      </div>
+
+      <!-- Desplegable suave: Resto de la Colección de Zarcillos -->
+      <div class="collapsible-container" id="allZarcillosContainer">
+        <div class="product-grid" id="moreZarcillosGrid">
+          <!-- Renderizado dinámico vía JS -->
         </div>
       </div>
 
-      <div class="products-grid" id="productsGrid">
-        <!-- Renderizado dinámico vía script -->
+      <div class="expand-action-wrap">
+        <button class="btn-expand-collection" id="toggleZarcillosBtn" aria-expanded="false">
+          <span id="toggleZarcillosText">Ver colección completa de Zarcillos (27 piezas)</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
       </div>
     </div>
   </section>
 
-  <!-- Sección Sobre Nosotras & Propósito -->
-  <section class="about-section" id="nosotras">
+  <!-- ========================================================================
+       4. SECCIÓN 2: TOP 4 COLLARES Y CADENITAS (+ DESPLEGABLE)
+       ======================================================================== -->
+  <section class="collection-section alt-bg" id="collares">
     <div class="container">
-      <div class="about-grid">
-        <div class="about-text-content">
-          <span class="subheading-accent">Nuestra Esencia</span>
-          <h2 class="section-title">Feminidad, Confianza y Amor Propio</h2>
-          <div class="divider-gold" style="margin-left: 0;"></div>
-          <p class="about-body">
-            En <strong>AMELIA Accesorios</strong> creemos firmemente que los accesorios correctos tienen el poder de transformar el ánimo y realzar la belleza natural en cualquier etapa de la vida. Desde la juventud vibrante hasta la elegancia madura y segura, creamos piezas que acompañan tu historia.
-          </p>
-          <p class="about-body">
-            Nuestra estética boutique combina la ligereza, materiales nobles y destellos que no pesan, cumpliendo nuestra promesa fundamental: <em>“Eleva cualquier look, en cualquier momento.”</em>
-          </p>
-          <div class="quote-box">
-            "Cada zarcillo es un recordatorio de consentirte, quererte y brillar con autenticidad."
+      <div class="section-header-centered">
+        <span class="section-category-tag">Nueva Colección</span>
+        <h2 class="section-heading">Top Collares y Cadenitas</h2>
+        <div class="section-accent-line"></div>
+        <p class="section-subtext">
+          Piezas en acero inoxidable resistente al agua con dijes de alta precisión y cristales luminosos.
+        </p>
+      </div>
+
+      <!-- Grid Top 4 Collares (Fila de 4) -->
+      <div class="product-grid" id="topCollaresGrid">
+        <!-- Renderizado dinámico vía JS -->
+      </div>
+
+      <!-- Desplegable suave: Resto de la Colección de Collares -->
+      <div class="collapsible-container" id="allCollaresContainer">
+        <div class="product-grid" id="moreCollaresGrid">
+          <!-- Renderizado dinámico vía JS -->
+        </div>
+      </div>
+
+      <div class="expand-action-wrap">
+        <button class="btn-expand-collection" id="toggleCollaresBtn" aria-expanded="false">
+          <span id="toggleCollaresText">Ver colección completa de Collares (11 piezas)</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       5. SECCIÓN 3: PROPUESTA DE VALOR & SELLOS DE CONFIANZA
+       ======================================================================== -->
+  <section class="trust-badges-section" id="garantia">
+    <div class="container">
+      <div class="section-header-centered">
+        <span class="section-category-tag">Experiencia Boutique</span>
+        <h2 class="section-heading">La Promesa AMELIA</h2>
+        <div class="section-accent-line"></div>
+        <p class="section-subtext">
+          Nos aseguramos de que cada detalle de tu compra sea impecable, desde la selección del material hasta la apertura de tu paquete.
+        </p>
+      </div>
+
+      <div class="trust-badges-grid">
+        <div class="trust-badge-card">
+          <div class="trust-icon-box">
+            <i class="fas fa-bolt"></i>
           </div>
+          <h3 class="trust-card-title">Entregas en &lt;24h</h3>
+          <p class="trust-card-desc">Servicio express en Caracas y despachos seguros y rápidos a nivel nacional.</p>
         </div>
 
-        <div class="about-features-panel">
-          <div class="feature-card">
-            <div class="feature-icon-wrapper">
-              <i class="fas fa-gem"></i>
-            </div>
-            <div class="feature-text">
-              <h4>Diseños Exclusivos</h4>
-              <p>Curaduría cuidada con modelos seleccionados que complementan atuendos casuales y formales.</p>
-            </div>
+        <div class="trust-badge-card">
+          <div class="trust-icon-box">
+            <i class="fas fa-shield-halved"></i>
           </div>
+          <h3 class="trust-card-title">Acero & Hipoalergénico</h3>
+          <p class="trust-card-desc">Materiales nobles seleccionados que no manchan tu piel ni provocan alergias.</p>
+        </div>
 
-          <div class="feature-card">
-            <div class="feature-icon-wrapper">
-              <i class="fas fa-truck-fast"></i>
-            </div>
-            <div class="feature-text">
-              <h4>Envíos a Todo el País</h4>
-              <p>Despachos a nivel nacional con empaque protector de regalo que cuida cada detalle de tu joya.</p>
-            </div>
+        <div class="trust-badge-card">
+          <div class="trust-icon-box">
+            <i class="fas fa-gift"></i>
           </div>
+          <h3 class="trust-card-title">Empaque Premium</h3>
+          <p class="trust-card-desc">Cada pieza viene protegida en su cajita de regalo lista para sorprender.</p>
+        </div>
 
-          <div class="feature-card">
-            <div class="feature-icon-wrapper">
-              <i class="fas fa-heart"></i>
-            </div>
-            <div class="feature-text">
-              <h4>Atención Personalizada</h4>
-              <p>Trato cercano y asesoría inmediata para responder tus inquietudes directamente por WhatsApp.</p>
-            </div>
+        <div class="trust-badge-card">
+          <div class="trust-icon-box">
+            <i class="fas fa-comments"></i>
           </div>
+          <h3 class="trust-card-title">Asesoría Directa</h3>
+          <p class="trust-card-desc">Atención humana, cordial y personalizada en tiempo real por WhatsApp.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Banner Call to Action de Compra Asistida -->
+  <!-- ========================================================================
+       BANNER CTA DE COMPRA ASISTIDA
+       ======================================================================== -->
   <section class="cta-banner-section">
     <div class="container">
       <div class="cta-banner-card">
         <div class="cta-banner-text">
-          <h3>¿Deseas atención personalizada o ver fotos adicionales?</h3>
-          <p>Escríbenos a nuestro canal oficial de WhatsApp y te brindaremos asistencia amable e inmediata.</p>
+          <h3>¿Buscas un detalle especial o ayuda para elegir?</h3>
+          <p>Escríbenos directamente a WhatsApp. Nuestras asesoras te enviarán fotos y videos en alta resolución para que elijas la joya perfecta.</p>
         </div>
         <div class="cta-banner-btn">
-          <a href="https://wa.me/584220575928?text=%C2%A1Hola%20AMELIA%20Accesorios!%20Me%20gustar%C3%ADa%20recibir%20asesor%C3%ADa%20personalizada%20de%20la%20colecci%C3%B3n." target="_blank" rel="noopener noreferrer" class="btn-whatsapp-large">
-            <i class="fab fa-whatsapp"></i> Hablar al +58 422-0575928
+          <a href="https://wa.me/584220575928?text=%C2%A1Hola%20AMELIA%20Accesorios!%20Me%20gustar%C3%ADa%20asesor%C3%ADa%20personalizada%20para%20elegir%20una%20pieza." target="_blank" rel="noopener noreferrer" class="btn-whatsapp-banner">
+            <i class="fab fa-whatsapp"></i> Hablar con una Asesora
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer / Pie de Página Oficial -->
-  <footer class="footer-luxury" id="contacto">
+  <!-- ========================================================================
+       FOOTER / PIE DE PÁGINA
+       ======================================================================== -->
+  <footer class="footer-boutique">
     <div class="container">
       <div class="footer-top">
-        <div class="footer-col brand-col">
+        <div class="footer-col">
           <div class="footer-logo">
             <img 
               src="Logo_Amelia_accesorios.png" 
               alt="Logo AMELIA Accesorios" 
               class="footer-logo-img"
-              onerror="this.onerror=null; this.src='Logo_Amelia accesorios.jpg';"
+              onerror="this.onerror=null; this.src='img/Logo_Amelia_accesorios.png';"
             >
             <div class="brand-text-block">
               <span class="brand-name">AMELIA</span>
-              <span class="brand-sub" style="color: var(--color-accent-pink);">Accesorios</span>
+              <span class="brand-sub" style="color: var(--color-nude-pink);">Accesorios</span>
             </div>
           </div>
           <p class="footer-bio">
-            “Eleva cualquier look, en cualquier momento.” Joyería fina y zarcillos concebidos para resaltar la feminidad, delicadeza y confianza.
+            “Eleva cualquier look, en cualquier momento.” Joyería fina y accesorios pensados para inspirar confianza y feminidad.
           </p>
           <div class="social-links">
-            <a href="https://instagram.com/Ameliaccsrs_shop" target="_blank" rel="noopener noreferrer" aria-label="Instagram @Ameliaccsrs_shop" class="social-icon" title="Instagram @Ameliaccsrs_shop">
+            <a href="https://instagram.com/Ameliaccsrs_shop" target="_blank" rel="noopener noreferrer" aria-label="Instagram AMELIA" class="social-icon">
               <i class="fab fa-instagram"></i>
             </a>
-            <a href="https://wa.me/584220575928?text=%C2%A1Hola!%20Deseo%20informaci%C3%B3n%20sobre%20la%20colecci%C3%B3n." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp AMELIA Accesorios" class="social-icon" title="WhatsApp +58 422-0575928">
+            <a href="https://wa.me/584220575928" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp AMELIA" class="social-icon">
               <i class="fab fa-whatsapp"></i>
             </a>
           </div>
         </div>
 
         <div class="footer-col">
-          <h4 class="footer-title">Navegación</h4>
+          <h4 class="footer-title">Colecciones</h4>
           <ul class="footer-links">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#catalogo">Catálogo de Zarcillos (20)</a></li>
-            <li><a href="#nosotras">Propósito & Esencia</a></li>
-            <li><a href="#contacto">Contacto & Pedidos</a></li>
+            <li><a href="#zarcillos">Zarcillos Clásicos & Top Ventas ($6)</a></li>
+            <li><a href="#collares">Collares & Cadenitas de Acero ($8)</a></li>
+            <li><a href="#garantia">Garantía Hipoalergénica</a></li>
+            <li><a href="https://wa.me/584220575928">Atención al Cliente</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4 class="footer-title">Contacto Oficial</h4>
+          <h4 class="footer-title">Pedidos Directos</h4>
           <ul class="footer-info">
-            <li>
-              <i class="fab fa-instagram"></i>
-              <a href="https://instagram.com/Ameliaccsrs_shop" target="_blank" rel="noopener noreferrer">@Ameliaccsrs_shop</a>
-            </li>
-            <li>
-              <i class="fab fa-whatsapp"></i>
-              <a href="https://wa.me/584220575928?text=%C2%A1Hola!%20Deseo%20informaci%C3%B3n." target="_blank" rel="noopener noreferrer">+58 422-0575928</a>
-            </li>
-            <li><i class="fas fa-truck"></i> Envíos a todo el país</li>
-            <li><i class="fas fa-coins"></i> Precios en USD ($6 cada modelo)</li>
+            <li><i class="fas fa-clock"></i> Atención Lun - Dom: 8:00 AM - 9:00 PM</li>
+            <li><i class="fas fa-truck-fast"></i> Envíos en Caracas (&lt;24h) y toda Venezuela</li>
+            <li><i class="fas fa-shield-halved"></i> Acero Inoxidable & Baño de Calidad</li>
+            <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/584220575928">+58 422-0575928</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2026 <strong>AMELIA Accesorios</strong>. Todos los derechos reservados. “Eleva cualquier look, en cualquier momento.”</p>
+        <p>&copy; 2026 <strong>AMELIA Accesorios</strong>. Todos los derechos reservados. Diseñado para compra directa y máxima conversión.</p>
       </div>
     </div>
   </footer>
 
-  <!-- Modal / Lightbox de Vista Previa a Pantalla Completa -->
+  <!-- ========================================================================
+       MODAL / LIGHTBOX DE PRODUCTO RÁPIDO
+       ======================================================================== -->
   <div class="modal-overlay" id="productModal" aria-hidden="true" role="dialog">
     <div class="modal-container">
       <button class="modal-close-btn" id="modalCloseBtn" aria-label="Cerrar ventana">
@@ -1771,41 +1899,41 @@ button {
 
       <div class="modal-content-grid">
         <div class="modal-image-col">
-          <div class="modal-badge" id="modalBadge">Disponible</div>
-          <img src="" alt="Vista previa de zarcillo" id="modalImage" class="modal-img-element">
+          <div class="modal-badge" id="modalBadge">Top Ventas</div>
+          <img src="" alt="Vista previa de producto" id="modalImage" class="modal-img-element">
         </div>
 
         <div class="modal-info-col">
-          <div class="modal-sku" id="modalSku">REF: AM-001</div>
-          <h2 class="modal-title" id="modalTitle">Nombre del Modelo</h2>
+          <div class="modal-ref" id="modalRef">REF: AM-001</div>
+          <h2 class="modal-title" id="modalTitle">Nombre de la Joya</h2>
           
           <div class="modal-price-box">
-            <span class="price-usd" id="modalPriceUsd">$6.00 USD</span>
+            <span class="price-usd" id="modalPrice">$6.00 USD</span>
           </div>
 
           <p class="modal-description" id="modalDescription">
-            Exquisita pieza de bisutería fina de edición selecta con acabados impecables, postes hipoalergénicos y engaste brillante.
+            Descripción de la pieza con materiales selectos y confort para uso diario.
           </p>
 
           <div class="modal-specs">
             <div class="spec-item">
               <i class="fas fa-check-circle"></i>
-              <span>Postes hipoalergénicos y seguros</span>
+              <span>Material Hipoalergénico / Acero Inoxidable</span>
             </div>
             <div class="spec-item">
-              <i class="fas fa-feather-alt"></i>
-              <span>Ultra liviano para uso prolongado</span>
+              <i class="fas fa-feather-pointed"></i>
+              <span>Diseño ligero y cómodo para todo el día</span>
             </div>
             <div class="spec-item">
               <i class="fas fa-gift"></i>
-              <span>Empaque boutique listo para regalo</span>
+              <span>Incluye empaque de regalo listo</span>
             </div>
           </div>
 
           <div class="modal-actions">
             <a href="#" id="modalWaBtn" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-modal">
               <i class="fab fa-whatsapp"></i>
-              <span>Pedir este Modelo por WhatsApp</span>
+              <span>Pedir por WhatsApp Ahora</span>
             </a>
           </div>
         </div>
@@ -1813,297 +1941,653 @@ button {
     </div>
   </div>
 
-  <!-- Botón Flotante Permanente de WhatsApp (+58 422-0575928) -->
-  <a href="https://wa.me/584220575928?text=%C2%A1Hola%20AMELIA%20Accesorios!%20Me%20gustar%C3%ADa%20consultar%20sobre%20sus%20zarcillos." target="_blank" rel="noopener noreferrer" class="floating-wa" title="Chatear al +58 422-0575928">
+  <!-- Botón Flotante de WhatsApp -->
+  <a href="https://wa.me/584220575928?text=%C2%A1Hola%20AMELIA%20Accesorios!%20Deseo%20hacer%20un%20pedido." target="_blank" rel="noopener noreferrer" class="floating-wa" title="Escríbenos por WhatsApp">
     <i class="fab fa-whatsapp"></i>
-    <span class="tooltip-wa">¡Escríbenos por WhatsApp!</span>
+    <span class="tooltip-wa">¡Entregas en &lt;24h en Caracas!</span>
   </a>
 
+  <!-- ========================================================================
+       CATÁLOGO OFICIAL & CONTROL INTERACTIVO (JS)
+       ======================================================================== -->
   <script>
 /**
- * Catálogo Oficial de AMELIA Accesorios
- * 20 Modelos de Zarcillos con referencias e imágenes reales en la subcarpeta img/
- * Precio unificado: $6.00 USD (6$)
- * WhatsApp: +58 422-0575928
+ * DATA OFICIAL DEL CATÁLOGO AMELIA ACCESORIOS
+ * - Zarcillos: $6.00 USD (27 piezas)
+ * - Collares & Cadenitas: $8.00 USD (11 piezas)
+ * - Nombres evocadores y comerciales con identidad única (sin prefijos genéricos)
+ * - Referencias oficiales: AM-xxx
+ * - Fila de 4 items en el grid principal de cada categoría
+ * - WhatsApp: +58 422-0575928
  */
 
 const WHATSAPP_PHONE = "584220575928";
-const INSTAGRAM_URL = "https://instagram.com/Ameliaccsrs_shop";
 
-const PRODUCTS_DATA = [
+// 1. COLECCIÓN DE ZARCILLOS ($6.00 USD)
+const ZARCILLOS_DATA = [
+  // TOP 4 ZARCILLOS MÁS VENDIDOS
   {
-    id: 1,
-    name: "Zarcillos Zar 01 Blanco Perla",
+    id: "zar-1",
     ref: "AM-001",
-    priceUsd: 6.00,
-    badge: "Edición Limitada",
-    badgeType: "limitada",
-    image: "Zar_01_Blanco.jpg", fallbackImage: "Zarcillos_Zar_01_Blanco Perla.jpg",
-    description: "Diseño refinado en blanco perla con acabados suaves y postes hipoalergénicos. Diseñado para elevar cualquier look, en cualquier momento."
+    name: "Perla Sol Royale",
+    category: "Zarcillos",
+    price: "$6.00",
+    badge: "Top Ventas",
+    badgeClass: "badge-top-ventas",
+    image: "Zar_01_Blanco.jpg",
+    fallback: "img/Zar_01_Blanco.jpg",
+    desc: "Nuestra pieza insignia más codiciada. Fusión de blanco marfil aperlado con postes hipoalergénicos ultralivianos."
   },
   {
-    id: 2,
-    name: "Zarcillos Zar 01 Dorado Radiante",
+    id: "zar-2",
     ref: "AM-002",
-    priceUsd: 6.00,
-    badge: "Disponible",
-    badgeType: "disponible",
-    image: "Zar_01_Dorado.jpg", fallbackImage: "Zarcillos_Zar_01_Dorado Radiante.jpg",
-    description: "Destello dorado cálido y elegante con silueta fluida. Perfecto tanto para ocasiones de día como eventos de noche."
+    name: "Aureola Dorada Star",
+    category: "Zarcillos",
+    price: "$6.00",
+    badge: "Top Ventas",
+    badgeClass: "badge-top-ventas",
+    image: "Zar_01_Dorado.jpg",
+    fallback: "img/Zar_01_Dorado.jpg",
+    desc: "Aura luminosa con baño pulido que captura y refleja la luz natural. Impecable para el día a día o eventos de noche."
   },
   {
-    id: 3,
-    name: "Zarcillos Zar 02 Blanco Pureza",
+    id: "zar-3",
     ref: "AM-003",
-    priceUsd: 6.00,
-    badge: "Disponible",
-    badgeType: "disponible",
-    image: "Zar_02_Blanco.jpg", fallbackImage: "Zarcillos_Zar_02_Blanco Pureza.jpg",
-    description: "Elegancia minimalista con toque boutique. Peso ultraligero que proporciona máxima comodidad durante todo el día."
+    name: "Pureza Atenea Drop",
+    category: "Zarcillos",
+    price: "$6.00",
+    badge: "Top Ventas",
+    badgeClass: "badge-top-ventas",
+    image: "Zar_02_Blanco.jpg",
+    fallback: "img/Zar_02_Blanco.jpg",
+    desc: "Silueta minimalista alargada que estiliza suavemente el cuello con una presencia pulcra y sofisticada."
   },
   {
-    id: 4,
-    name: "Zarcillos Circulares Blanco Sublime",
+    id: "zar-4",
     ref: "AM-004",
-    priceUsd: 6.00,
-    badge: "Disponible",
-    badgeType: "disponible",
-    image: "Zar_Circu_Blanco.jpg", fallbackImage: "Zarcillos_Zar_Circu_Blanco Sublime.jpg",
-    description: "Geometría circular armónica inspirada en la feminidad y delicadeza. Un clásico imprescindible."
+    name: "Corazón Romántico Soft",
+    category: "Zarcillos",
+    price: "$6.00",
+    badge: "Top Ventas",
+    badgeClass: "badge-top-ventas",
+    image: "Zar_Cor1_Blanco.jpg",
+    fallback: "img/Zar_Cor1_Blanco.jpg",
+    desc: "Inspirados en la ternura y el amor propio. Silueta de corazón en blanco nieve con sujeción ultracómoda."
   },
+  // RESTO DE LA COLECCIÓN (Desplegable)
   {
-    id: 5,
-    name: "Zarcillos Círculo Turquesa Brisa",
+    id: "zar-5",
     ref: "AM-005",
-    priceUsd: 6.00,
-    badge: "Disponible",
-    badgeType: "disponible",
-    image: "Zar_Circu_Turq.jpg", fallbackImage: "Zarcillos_Zar_Circu_Turq Brisa.jpg",
-    description: "Tono turquesa refrescante en silueta circular suave. Aporta un toque alegre, moderno y distinguido."
+    name: "Geometría Ébano Luxe",
+    category: "Zarcillos",
+    price: "$6.00",
+    badge: "Exclusivo",
+    badgeClass: "badge-exclusivo",
+    image: "Zar_Cuadrado_Negro.jpg",
+    fallback: "img/Zar_Cuadrado_Negro.jpg",
+    desc: "Negro carbón profundo con contornos definidos. Sobriedad, elegancia y contraste perfecto para atuendos modernos."
   },
   {
-    id: 6,
-    name: "Zarcillos Concha Marina Blanco",
+    id: "zar-6",
     ref: "AM-006",
-    priceUsd: 6.00,
-    badge: "Edición Limitada",
-    badgeType: "limitada",
-    image: "Zar_Concha_Blanco.jpg", fallbackImage: "Zarcillos_Zar_Concha_Blanco Marina.jpg",
-    description: "Inspiración marina en delicada textura concha color blanco marfil. Símbolo de pureza y estilo costero refinado."
+    name: "Círculo Marfil Minimal",
+    category: "Zarcillos",
+    price: "$6.00",
+    badge: "Exclusivo",
+    badgeClass: "badge-exclusivo",
+    image: "Zar_Circu_Blanco.jpg",
+    fallback: "img/Zar_Circu_Blanco.jpg",
+    desc: "Armonía circular clásica en tono blanco suave. Versatilidad pura para cualquier combinación."
   },
   {
-    id: 7,
-    name: "Zarcillos Concha Marina Turquesa",
+    id: "zar-7",
     ref: "AM-007",
-    priceUsd: 6.00,
-    badge: "Disponible",
-    badgeType: "disponible",
-    image: "Zar_Concha_Turq.jpg", fallbackImage: "Zarcillos_Zar_Concha_Turq Marina.jpg",
-    description: "Detalle concha en tono turquesa mar caribeño. Diseño ligero ideal para looks luminosos y relajados."
+    name: "Brisa Turquesa Circular",
+    category: "Zarcillos",
+    price: "$6.00",
+    badge: "Exclusivo",
+    badgeClass: "badge-exclusivo",
+    image: "Zar_Circu_Turq.jpg",
+    fallback: "img/Zar_Circu_Turq.jpg",
+    desc: "Toque refrescante en tono turquesa mar caribeño. Aporta vitalidad y alegría inmediata al rostro."
   },
   {
-    id: 8,
-    name: "Zarcillos Corazón Blanco Delicado",
+    id: "zar-8",
     ref: "AM-008",
-    priceUsd: 6.00,
-    badge: "Edición Limitada",
-    badgeType: "limitada",
-    image: "Zar_Cor1_Blanco.jpg", fallbackImage: "Zarcillos_Zar_Cor1_Blanco Delicado.jpg",
-    description: "Inspirados en el amor propio y la ternura. Silueta de corazón estilizada en acabado marfil luminoso."
+    name: "Concha Marina Pure",
+    category: "Zarcillos",
+    price: "$6.00",
+    badge: "Exclusivo",
+    badgeClass: "badge-exclusivo",
+    image: "Zar_Concha_Blanco.jpg",
+    fallback: "img/Zar_Concha_Blanco.jpg",
+    desc: "Textura concha en blanco marfil. Inspiración marina boutique con perfil elegante."
   },
   {
-    id: 9,
-    name: "Zarcillos Cuadrado Blanco Luxe",
+    id: "zar-9",
     ref: "AM-009",
-    priceUsd: 6.00,
-    badge: "Disponible",
-    badgeType: "disponible",
-    image: "Zar_Cuadrado_Blanco.jpg", fallbackImage: "Zarcillos_Zar_Cuadrado_Blanco Luxe.jpg",
-    description: "Líneas geométricas limpias con esmalte blanco pulido. Refleja seguridad y estilo contemporáneo."
+    name: "Concha Amatista Chic",
+    category: "Zarcillos",
+    price: "$6.00",
+    badge: "Nuevo",
+    badgeClass: "badge-nuevo",
+    image: "Zar_Concha_Morado_AM-026.jpg",
+    fallback: "img/Zar_Concha_Morado_AM-026.jpg",
+    desc: "Fantasía marina en tono lila amatista. Diseño original para quienes aman los toques sutiles de color."
   },
   {
-    id: 10,
-    name: "Zarcillos Cuadrado Blanco Élite",
+    id: "zar-10",
     ref: "AM-010",
-    priceUsd: 6.00,
-    badge: "Disponible",
-    badgeType: "disponible",
-    image: "Zar_Cuadrado_Blanco_02.jpg", fallbackImage: "Zarcillos_Zar_Cuadrado_Blanco Elite.jpg",
-    description: "Variante sofisticada con bordes definidos y superficie satinada blanca. Versatilidad pura para cualquier ocasión."
+    name: "Concha Turquesa Caribe",
+    category: "Zarcillos",
+    price: "$6.00",
+    badge: "Exclusivo",
+    badgeClass: "badge-exclusivo",
+    image: "Zar_Concha_Turq.jpg",
+    fallback: "img/Zar_Concha_Turq.jpg",
+    desc: "Silueta marina con textura en relieve color turquesa. Ligereza absoluta para todo el día."
   },
   {
-    id: 11,
-    name: "Zarcillos Cuadrado Blanco Perla",
+    id: "zar-11",
     ref: "AM-011",
-    priceUsd: 6.00,
-    badge: "Edición Limitada",
-    badgeType: "limitada",
-    image: "Zar_Cuadrado_Blanco_03.jpg", fallbackImage: "Zarcillos_Zar_Cuadrado_Blanco Perla.jpg",
-    description: "Tercera dimensión geométrica en tono blanco perlado. Estructura ligera que resalta la belleza del rostro."
+    name: "Cuadrado Nieve Satin",
+    category: "Zarcillos",
+    price: "$6.00",
+    badge: "Exclusivo",
+    badgeClass: "badge-exclusivo",
+    image: "Zar_Cuadrado_Blanco.jpg",
+    fallback: "img/Zar_Cuadrado_Blanco.jpg",
+    desc: "Esmalte pulido satinado en base cuadrada limpia. Aporta distinción y presencia contemporánea."
   },
   {
-    id: 12,
-    name: "Zarcillos Cuadrado Negro Ébano",
+    id: "zar-12",
     ref: "AM-012",
-    priceUsd: 6.00,
-    badge: "Disponible",
-    badgeType: "disponible",
-    image: "Zar_Cuadrado_Negro.jpg", fallbackImage: "Zarcillos_Zar_Cuadrado_Negro Ebano.jpg",
-    description: "Negro carbón profundo con contornos definidos. Sobriedad, presencia y sofisticación absoluta."
+    name: "Cuadrado Pureza Élite",
+    category: "Zarcillos",
+    price: "$6.00",
+    badge: "Exclusivo",
+    badgeClass: "badge-exclusivo",
+    image: "Zar_Cuadrado_Blanco_02.jpg",
+    fallback: "img/Zar_Cuadrado_Blanco_02.jpg",
+    desc: "Corte rectangular estilizado con bordes biselados. Confort hipoalergénico certificado."
   },
   {
-    id: 13,
-    name: "Zarcillos Cuadrado Rosa Romantic",
+    id: "zar-13",
     ref: "AM-013",
-    priceUsd: 6.00,
-    badge: "Disponible",
-    badgeType: "disponible",
-    image: "Zar_Cuadrado_Rosado.jpg", fallbackImage: "Zarcillos_Zar_Cuadrado_Rosado Romantic.jpg",
-    description: "Tono rosa romántico y sutil que complementa armoniosamente los tonos de piel para todas las edades."
+    name: "Cuadrado Alabastro",
+    category: "Zarcillos",
+    price: "$6.00",
+    badge: "Exclusivo",
+    badgeClass: "badge-exclusivo",
+    image: "Zar_Cuadrado_Blanco_03.jpg",
+    fallback: "img/Zar_Cuadrado_Blanco_03.jpg",
+    desc: "Textura sedosa en blanco puro con destello sutil. Excelente para combinar con collares dorados."
   },
   {
-    id: 14,
-    name: "Zarcillos Turquesa & Gris Serenidad",
+    id: "zar-14",
     ref: "AM-014",
-    priceUsd: 6.00,
-    badge: "Disponible",
-    badgeType: "disponible",
-    image: "Zar_Cuadrado_Turq_Gris.jpg", fallbackImage: "Zarcillos_Zar_Cuadrado_Turq Gris Serenidad.jpg",
-    description: "Equilibrio entre tonos turquesa y gris humo. Diseño original que aporta distinción natural."
+    name: "Mandarina Sunset",
+    category: "Zarcillos",
+    price: "$6.00",
+    badge: "Nuevo",
+    badgeClass: "badge-nuevo",
+    image: "Zar_Cuadrado_Naranja_AM-023.jpg",
+    fallback: "img/Zar_Cuadrado_Naranja_AM-023.jpg",
+    desc: "Tono mandarina cálido que ilumina los tonos de piel bronceados con moderna frescura."
   },
   {
-    id: 15,
-    name: "Zarcillos Flor Dorada Jardín",
+    id: "zar-15",
     ref: "AM-015",
-    priceUsd: 6.00,
-    badge: "Edición Limitada",
-    badgeType: "limitada",
-    image: "Zar_Flor_Dorado.jpg", fallbackImage: "Zarcillos_Zar_Flor_Dorado Jardin.jpg",
-    description: "Silueta floral esculpida con baño dorado radiante. Transmite florecimiento, delicadeza y elegancia natural."
+    name: "Rosa Boutique Sublime",
+    category: "Zarcillos",
+    price: "$6.00",
+    badge: "Exclusivo",
+    badgeClass: "badge-exclusivo",
+    image: "Zar_Cuadrado_Rosado.jpg",
+    fallback: "img/Zar_Cuadrado_Rosado.jpg",
+    desc: "Rosa pastel insignia con delicado engaste pulido. Ternura y elegancia sin esfuerzo."
   },
   {
-    id: 16,
-    name: "Zarcillos Hoja Negra Silueta",
+    id: "zar-16",
     ref: "AM-016",
-    priceUsd: 6.00,
-    badge: "Edición Limitada",
-    badgeType: "limitada",
-    image: "Zar_Hoja_Negro.jpg", fallbackImage: "Zarcillos_Zar_Hoja_Negro Silueta.jpg",
-    description: "Forma botánica estilizada en negro elegante con calados finos que atrapan la mirada."
+    name: "Dúo Turquesa & Gris Humo",
+    category: "Zarcillos",
+    price: "$6.00",
+    badge: "Exclusivo",
+    badgeClass: "badge-exclusivo",
+    image: "Zar_Cuadrado_Turq_Gris.jpg",
+    fallback: "img/Zar_Cuadrado_Turq_Gris.jpg",
+    desc: "Contraste geométrico sereno entre turquesa brillante y gris tenue. Estilo arquitectónico chic."
   },
   {
-    id: 17,
-    name: "Zarcillos Óvalo Blanco Clásico",
+    id: "zar-17",
     ref: "AM-017",
-    priceUsd: 6.00,
-    badge: "Disponible",
-    badgeType: "disponible",
-    image: "Zar_Ovalado_Blanco.jpg", fallbackImage: "Zarcillos_Zar_Ovalado_Blanco Clasico.jpg",
-    description: "Curvatura ovalada armónica en blanco impoluto. Alarga visualmente las líneas del cuello con sutil gracia."
+    name: "Pétalos Dorados Imperial",
+    category: "Zarcillos",
+    price: "$6.00",
+    badge: "Exclusivo",
+    badgeClass: "badge-exclusivo",
+    image: "Zar_Flor_Dorado.jpg",
+    fallback: "img/Zar_Flor_Dorado.jpg",
+    desc: "Silueta botánica esculpida con pétalos en baño dorado radiante. Inspira florecimiento y distinción."
   },
   {
-    id: 18,
-    name: "Zarcillos Óvalo Carmesí Royale",
+    id: "zar-18",
     ref: "AM-018",
-    priceUsd: 6.00,
-    badge: "Edición Limitada",
-    badgeType: "limitada",
-    image: "Zar_Ovalado_Rojo.jpg", fallbackImage: "Zarcillos_Zar_Ovalado_Rojo Royale.jpg",
-    description: "Matiz rubí profundo con reflejos cálidos. Una joya que transmite pasión, seguridad y porte."
+    name: "Flor Petite Gold",
+    category: "Zarcillos",
+    price: "$6.00",
+    badge: "Nuevo",
+    badgeClass: "badge-nuevo",
+    image: "Zar_Flor_Dorado_Peque_AM-025.jpg",
+    fallback: "img/Zar_Flor_Dorado_Peque_AM-025.jpg",
+    desc: "Topito floral delicado en tamaño discreto. Ideal para looks formales o segundos orificios."
   },
   {
-    id: 19,
-    name: "Zarcillos Óvalo Turquesa Serenidad",
+    id: "zar-19",
     ref: "AM-019",
-    priceUsd: 6.00,
-    badge: "Disponible",
-    badgeType: "disponible",
-    image: "Zar_Ovalado_Turq.jpg", fallbackImage: "Zarcillos_Zar_Ovalado_Turq Serenidad.jpg",
-    description: "Piedra texturizada en tono turquesa mediterráneo. Ligereza absoluta y confort garantizado."
+    name: "Hoja Negra Calada",
+    category: "Zarcillos",
+    price: "$6.00",
+    badge: "Exclusivo",
+    badgeClass: "badge-exclusivo",
+    image: "Zar_Hoja_Negro.jpg",
+    fallback: "img/Zar_Hoja_Negro.jpg",
+    desc: "Silueta botánica con finos calados en negro mate. Estética etérea y vanguardista."
   },
   {
-    id: 20,
-    name: "Zarcillos Sol Radiante Turquesa",
+    id: "zar-20",
     ref: "AM-020",
-    priceUsd: 6.00,
-    badge: "Edición Limitada",
-    badgeType: "limitada",
-    image: "Zar_Sol_Turq.jpg", fallbackImage: "Zarcillos_Zar_Sol_Turq Radiante.jpg",
-    description: "Motivo solar con centro turquesa brillante que evoca energía positiva y calor veraniego."
+    name: "Hoja Rosa Romance",
+    category: "Zarcillos",
+    price: "$6.00",
+    badge: "Nuevo",
+    badgeClass: "badge-nuevo",
+    image: "Zar_Hoja_Rosado_AM-022.jpg",
+    fallback: "img/Zar_Hoja_Rosado_AM-022.jpg",
+    desc: "Follaje estilizado en dulce tono rosa empolvado. Delicadeza y movimiento femenino garantizado."
+  },
+  {
+    id: "zar-21",
+    ref: "AM-021",
+    name: "Hoja Esmeralda Turquesa",
+    category: "Zarcillos",
+    price: "$6.00",
+    badge: "Nuevo",
+    badgeClass: "badge-nuevo",
+    image: "Zar_Hoja_Turq_AM-021.jpg",
+    fallback: "img/Zar_Hoja_Turq_AM-021.jpg",
+    desc: "Verde azulado radiante con caída armónica y acabados que conservan su brillo intacto."
+  },
+  {
+    id: "zar-22",
+    ref: "AM-022",
+    name: "Óvalo Marfil Perla",
+    category: "Zarcillos",
+    price: "$6.00",
+    badge: "Exclusivo",
+    badgeClass: "badge-exclusivo",
+    image: "Zar_Ovalado_Blanco.jpg",
+    fallback: "img/Zar_Ovalado_Blanco.jpg",
+    desc: "Curvatura ovalada que proporciona un encuadre armonioso al rostro con ligereza total."
+  },
+  {
+    id: "zar-23",
+    ref: "AM-023",
+    name: "Óvalo Rubí Royale",
+    category: "Zarcillos",
+    price: "$6.00",
+    badge: "Exclusivo",
+    badgeClass: "badge-exclusivo",
+    image: "Zar_Ovalado_Rojo.jpg",
+    fallback: "img/Zar_Ovalado_Rojo.jpg",
+    desc: "Rojo carmesí imperial de alta vibración. Una joya imponente para noches de gala o citas especiales."
+  },
+  {
+    id: "zar-24",
+    ref: "AM-024",
+    name: "Óvalo Turquesa Cielo",
+    category: "Zarcillos",
+    price: "$6.00",
+    badge: "Exclusivo",
+    badgeClass: "badge-exclusivo",
+    image: "Zar_Ovalado_Turq.jpg",
+    fallback: "img/Zar_Ovalado_Turq.jpg",
+    desc: "Textura mineral lisa en tono turquesa cielo. Combina a la perfección con estilos frescos y casuales."
+  },
+  {
+    id: "zar-25",
+    ref: "AM-025",
+    name: "Sol Radiante Rosa",
+    category: "Zarcillos",
+    price: "$6.00",
+    badge: "Nuevo",
+    badgeClass: "badge-nuevo",
+    image: "Zar_Sol_Rosado_Grande_AM-027.jpg",
+    fallback: "img/Zar_Sol_Rosado_Grande_AM-027.jpg",
+    desc: "Motivo solar imponente en tono rosa suave con rayos dorados. Presencia deslumbrante."
+  },
+  {
+    id: "zar-26",
+    ref: "AM-026",
+    name: "Sol Místico Turquesa",
+    category: "Zarcillos",
+    price: "$6.00",
+    badge: "Exclusivo",
+    badgeClass: "badge-exclusivo",
+    image: "Zar_Sol_Turq.jpg",
+    fallback: "img/Zar_Sol_Turq.jpg",
+    desc: "Energía solar con centro en turquesa encendido. Un amuleto de belleza y estilo."
+  },
+  {
+    id: "zar-27",
+    ref: "AM-027",
+    name: "Estrella Polar Blanca",
+    category: "Zarcillos",
+    price: "$6.00",
+    badge: "Nuevo",
+    badgeClass: "badge-nuevo",
+    image: "Zar_Star_Blanco_AM-024.jpg",
+    fallback: "img/Zar_Star_Blanco_AM-024.jpg",
+    desc: "Destello celestial en blanco inmaculado. Geometría astral inspiradora y atemporal."
   }
 ];
 
+// 2. COLECCIÓN DE COLLARES & CADENITAS ($8.00 USD)
+const COLLARES_DATA = [
+  // TOP 4 COLLARES MÁS VENDIDOS
+  {
+    id: "col-1",
+    ref: "AM-028",
+    name: "Alma de Venezuela",
+    category: "Collares",
+    price: "$8.00",
+    badge: "Top Ventas",
+    badgeClass: "badge-top-ventas",
+    image: "Collar_Cor_VE_AM-028.jpg",
+    fallback: "img/Collar_Cor_VE_AM-028.jpg",
+    desc: "Pieza profundamente emotiva y patriótica. Cadena fina en acero dorado con dije silueta de corazón y el mapa de Venezuela."
+  },
+  {
+    id: "col-2",
+    ref: "AM-029",
+    name: "Aura Esmeralda Star",
+    category: "Collares",
+    price: "$8.00",
+    badge: "Top Ventas",
+    badgeClass: "badge-top-ventas",
+    image: "Collar_Star_Verde_AM-029.jpg",
+    fallback: "img/Collar_Star_Verde_AM-029.jpg",
+    desc: "Destello estelar con gema central verde esmeralda facetada en marco bañado en oro. Lujo sutil y contemporáneo."
+  },
+  {
+    id: "col-3",
+    ref: "AM-030",
+    name: "Ojo de Luz & Protección",
+    category: "Collares",
+    price: "$8.00",
+    badge: "Top Ventas",
+    badgeClass: "badge-top-ventas",
+    image: "Collar_Ojoturco_Cristal_AM-34.jpg",
+    fallback: "img/Collar_Ojoturco_Cristal_AM-34.jpg",
+    desc: "Amuleto de protección ancestral con cristales circundantes de alto brillo y circonias transparentes."
+  },
+  {
+    id: "col-4",
+    ref: "AM-031",
+    name: "Amor Sagrado & Cruz",
+    category: "Collares",
+    price: "$8.00",
+    badge: "Top Ventas",
+    badgeClass: "badge-top-ventas",
+    image: "Collar_Cruz_Cor_AM-32.jpg",
+    fallback: "img/Collar_Cruz_Cor_AM-32.jpg",
+    desc: "Fusión de fe y devoción. Cruz estilizada entrelazada con corazón en acero pulido inoxidable."
+  },
+  // RESTO DE LA COLECCIÓN (Desplegable)
+  {
+    id: "col-5",
+    ref: "AM-032",
+    name: "Libertad Marina Ballena",
+    category: "Collares",
+    price: "$8.00",
+    badge: "Exclusivo",
+    badgeClass: "badge-exclusivo",
+    image: "Collar_Ballena_AM-31.jpg",
+    fallback: "img/Collar_Ballena_AM-31.jpg",
+    desc: "Símbolo de fuerza, libertad y conexión con el mar. Dije pulido espejo con contornos estilizados."
+  },
+  {
+    id: "col-6",
+    ref: "AM-033",
+    name: "Medusa Mística de los Mares",
+    category: "Collares",
+    price: "$8.00",
+    badge: "Nuevo",
+    badgeClass: "badge-nuevo",
+    image: "Collar_Medusa_AM-30.jpg",
+    fallback: "img/Collar_Medusa_AM-30.jpg",
+    desc: "Diseño orgánico inspirado en la danza de las medusas en el océano con finos tentáculos colgantes."
+  },
+  {
+    id: "col-7",
+    ref: "AM-034",
+    name: "Círculo de Fe & Devoción",
+    category: "Collares",
+    price: "$8.00",
+    badge: "Exclusivo",
+    badgeClass: "badge-exclusivo",
+    image: "Collar_Circulo_Fe_AM-33.jpg",
+    fallback: "img/Collar_Circulo_Fe_AM-33.jpg",
+    desc: "Aureola protectora con micro-cruz interna. Minimalismo espiritual que acompaña tus días."
+  },
+  {
+    id: "col-8",
+    ref: "AM-035",
+    name: "Mariposa Cristal Etéreo",
+    category: "Collares",
+    price: "$8.00",
+    badge: "Nuevo",
+    badgeClass: "badge-nuevo",
+    image: "Collar_Mariposa_Cristal_AM-35.jpg",
+    fallback: "img/Collar_Mariposa_Cristal_AM-35.jpg",
+    desc: "Silueta de mariposa con alas transparentes facetadas que destellan con cada movimiento."
+  },
+  {
+    id: "col-9",
+    ref: "AM-036",
+    name: "Estrella Celeste Brillante",
+    category: "Collares",
+    price: "$8.00",
+    badge: "Exclusivo",
+    badgeClass: "badge-exclusivo",
+    image: "Collar_Estrella_AM-36.jpg",
+    fallback: "img/Collar_Estrella_AM-36.jpg",
+    desc: "Dije estrella simétrica en acero inoxidable pulido. Luz, optimismo y porte refinado."
+  },
+  {
+    id: "col-10",
+    ref: "AM-037",
+    name: "Doble Latido con Cristales",
+    category: "Collares",
+    price: "$8.00",
+    badge: "Nuevo",
+    badgeClass: "badge-nuevo",
+    image: "Collar_Cor_Cristales_AM-37.jpg",
+    fallback: "img/Collar_Cor_Cristales_AM-37.jpg",
+    desc: "Silueta de corazón con pavé de cristales brillantes y cadena resistente a la humedad."
+  },
+  {
+    id: "col-11",
+    ref: "AM-038",
+    name: "Trébol Fortuna Perla",
+    category: "Collares",
+    price: "$8.00",
+    badge: "Nuevo",
+    badgeClass: "badge-nuevo",
+    image: "Collar_Trebol_Hoja_Blanco_AM-38.jpg",
+    fallback: "img/Collar_Trebol_Hoja_Blanco_AM-38.jpg",
+    desc: "El codiciado trébol de cuatro hojas en acabado blanco perla con bisel dorado estilo alta joyería europea."
+  }
+];
+
+// Helper para enlace directo de WhatsApp con mensaje precargado oficial
+function getWhatsAppBuyUrl(product) {
+  const text = `¡Hola AMELIA Accesorios! Me interesa comprar la pieza: "${product.name}" (Ref: ${product.ref}) de ${product.price} USD. ¿Tienen disponible para entrega?`;
+  return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`;
+}
+
+// Creador de tarjeta HTML
+function createProductCard(product) {
+  const card = document.createElement('article');
+  card.className = 'product-card';
+  card.setAttribute('data-id', product.id);
+
+  card.innerHTML = `
+    <div class="product-image-container" onclick="openProductModalById('${product.id}')" role="button" tabindex="0" aria-label="Ver detalles de ${product.name}">
+      <span class="product-badge ${product.badgeClass}">${product.badge}</span>
+      <img 
+        src="${encodeURI(product.image)}" 
+        alt="${product.name} - ${product.ref}" 
+        class="product-image" 
+        loading="lazy" 
+        onerror="this.onerror=null; this.src='${encodeURI(product.fallback)}';"
+      >
+      <div class="product-quick-view-overlay">
+        <span class="product-quick-view-btn">
+          <i class="fas fa-search-plus"></i> Vista Rápida
+        </span>
+      </div>
+    </div>
+
+    <div class="product-details">
+      <span class="product-ref-tag">${product.ref}</span>
+      <h3 class="product-name" onclick="openProductModalById('${product.id}')">${product.name}</h3>
+
+      <div class="product-price-row">
+        <span class="product-price">${product.price} USD</span>
+        <span class="product-guarantee-note"><i class="fas fa-shield-alt"></i> Hipoalergénico</span>
+      </div>
+
+      <a href="${getWhatsAppBuyUrl(product)}" target="_blank" rel="noopener noreferrer" class="btn-order-wa" aria-label="Pedir ${product.name} por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span>Pedir por WhatsApp</span>
+      </a>
+    </div>
+  `;
+
+  return card;
+}
+
+// Inicialización de Grids y Acordeones Desplegables
 document.addEventListener('DOMContentLoaded', () => {
-  renderProducts('all');
-  initNavigation();
-  initFilters();
-  initModal();
+  renderCatalogSections();
+  initCollapsibleSections();
+  initModalLogic();
+  initNavbarBehavior();
 });
 
-function getWhatsAppUrl(productName, productRef) {
-  const message = `¡Hola! Me interesa el modelo ${productName} (Ref: ${productRef}). ¿Está disponible?`;
-  return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
+function renderCatalogSections() {
+  // 1. Zarcillos: Fila de 4 items principales
+  const topZarGrid = document.getElementById('topZarcillosGrid');
+  const moreZarGrid = document.getElementById('moreZarcillosGrid');
+  
+  if (topZarGrid && moreZarGrid) {
+    const top4Zar = ZARCILLOS_DATA.slice(0, 4);
+    const restZar = ZARCILLOS_DATA.slice(4);
+
+    top4Zar.forEach(prod => topZarGrid.appendChild(createProductCard(prod)));
+    restZar.forEach(prod => moreZarGrid.appendChild(createProductCard(prod)));
+  }
+
+  // 2. Collares: Fila de 4 items principales
+  const topColGrid = document.getElementById('topCollaresGrid');
+  const moreColGrid = document.getElementById('moreCollaresGrid');
+
+  if (topColGrid && moreColGrid) {
+    const top4Col = COLLARES_DATA.slice(0, 4);
+    const restCol = COLLARES_DATA.slice(4);
+
+    top4Col.forEach(prod => topColGrid.appendChild(createProductCard(prod)));
+    restCol.forEach(prod => moreColGrid.appendChild(createProductCard(prod)));
+  }
 }
 
-function renderProducts(filter = 'all') {
-  const grid = document.getElementById('productsGrid');
-  if (!grid || typeof PRODUCTS_DATA === 'undefined') return;
+// Acordeones interactivos para desplegar colecciones completas sin recargar
+function initCollapsibleSections() {
+  // Toggle Zarcillos
+  const btnZar = document.getElementById('toggleZarcillosBtn');
+  const contZar = document.getElementById('allZarcillosContainer');
+  const textZar = document.getElementById('toggleZarcillosText');
 
-  grid.innerHTML = '';
+  if (btnZar && contZar) {
+    btnZar.addEventListener('click', () => {
+      const isExpanded = contZar.classList.toggle('expanded');
+      btnZar.classList.toggle('is-expanded', isExpanded);
+      btnZar.setAttribute('aria-expanded', isExpanded);
+      if (textZar) {
+        textZar.textContent = isExpanded 
+          ? "Ocultar colección ampliada de Zarcillos" 
+          : "Ver colección completa de Zarcillos (27 piezas)";
+      }
+    });
+  }
 
-  const filteredProducts = PRODUCTS_DATA.filter(prod => {
-    if (filter === 'all') return true;
-    return prod.badgeType === filter;
-  });
+  // Toggle Collares
+  const btnCol = document.getElementById('toggleCollaresBtn');
+  const contCol = document.getElementById('allCollaresContainer');
+  const textCol = document.getElementById('toggleCollaresText');
 
-  filteredProducts.forEach(product => {
-    const waLink = getWhatsAppUrl(product.name, product.ref);
-
-    const card = document.createElement('article');
-    card.className = 'product-card';
-    card.setAttribute('data-id', product.id);
-
-    card.innerHTML = `
-      <div class="product-image-container" onclick="openProductModal(${product.id})" role="button" tabindex="0" aria-label="Ver detalles de ${product.name}">
-        <span class="product-badge badge-${product.badgeType}">
-          ${product.badge}
-        </span>
-        <img 
-          src="${encodeURI(product.image)}" 
-          alt="${product.name}" 
-          class="product-image" 
-          loading="lazy" 
-          onerror="this.onerror=null; this.src='${encodeURI(product.fallbackImage)}';"
-        >
-        <div class="product-quick-view-overlay">
-          <span class="product-quick-view-btn">
-            <i class="fas fa-search-plus"></i> Vista Rápida
-          </span>
-        </div>
-      </div>
-
-      <div class="product-info">
-        <div class="product-meta">
-          <span class="product-sku">REF: ${product.ref}</span>
-        </div>
-        <h3 class="product-name" onclick="openProductModal(${product.id})">${product.name}</h3>
-
-        <div class="product-pricing">
-          <span class="price-usd">$${product.priceUsd.toFixed(2)} USD</span>
-        </div>
-
-        <a href="${waLink}" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-card" aria-label="Pedir por WhatsApp ${product.name}">
-          <i class="fab fa-whatsapp"></i>
-          <span>Pedir por WhatsApp</span>
-        </a>
-      </div>
-    `;
-
-    grid.appendChild(card);
-  });
+  if (btnCol && contCol) {
+    btnCol.addEventListener('click', () => {
+      const isExpanded = contCol.classList.toggle('expanded');
+      btnCol.classList.toggle('is-expanded', isExpanded);
+      btnCol.setAttribute('aria-expanded', isExpanded);
+      if (textCol) {
+        textCol.textContent = isExpanded 
+          ? "Ocultar colección ampliada de Collares" 
+          : "Ver colección completa de Collares (11 piezas)";
+      }
+    });
+  }
 }
 
-function initModal() {
+// Búsqueda global de productos para el modal
+function findProductById(id) {
+  return ZARCILLOS_DATA.find(p => p.id === id) || COLLARES_DATA.find(p => p.id === id);
+}
+
+function openProductModalById(id) {
+  const product = findProductById(id);
+  if (!product) return;
+
+  const modal = document.getElementById('productModal');
+  const modalImg = document.getElementById('modalImage');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalRef = document.getElementById('modalRef');
+  const modalPrice = document.getElementById('modalPrice');
+  const modalBadge = document.getElementById('modalBadge');
+  const modalDesc = document.getElementById('modalDescription');
+  const modalWaBtn = document.getElementById('modalWaBtn');
+
+  modalImg.src = encodeURI(product.image);
+  modalImg.onerror = () => { modalImg.src = encodeURI(product.fallback); };
+  modalImg.alt = product.name;
+
+  modalTitle.textContent = product.name;
+  modalRef.textContent = `REF: ${product.ref}`;
+  modalPrice.textContent = `${product.price} USD`;
+  modalBadge.textContent = product.badge;
+  modalBadge.className = `modal-badge ${product.badgeClass}`;
+  modalDesc.textContent = product.desc;
+  modalWaBtn.href = getWhatsAppBuyUrl(product);
+
+  modal.classList.add('active');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function initModalLogic() {
   const modal = document.getElementById('productModal');
   const closeBtn = document.getElementById('modalCloseBtn');
 
@@ -2114,9 +2598,7 @@ function initModal() {
   }
 
   modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      closeProductModal();
-    }
+    if (e.target === modal) closeProductModal();
   });
 
   document.addEventListener('keydown', (e) => {
@@ -2124,38 +2606,6 @@ function initModal() {
       closeProductModal();
     }
   });
-}
-
-function openProductModal(productId) {
-  if (typeof PRODUCTS_DATA === 'undefined') return;
-  const product = PRODUCTS_DATA.find(p => p.id === productId);
-  if (!product) return;
-
-  const modal = document.getElementById('productModal');
-  const modalImg = document.getElementById('modalImage');
-  const modalTitle = document.getElementById('modalTitle');
-  const modalSku = document.getElementById('modalSku');
-  const modalPriceUsd = document.getElementById('modalPriceUsd');
-  const modalBadge = document.getElementById('modalBadge');
-  const modalDesc = document.getElementById('modalDescription');
-  const modalWaBtn = document.getElementById('modalWaBtn');
-
-  const waLink = getWhatsAppUrl(product.name, product.ref);
-
-  modalImg.src = encodeURI(product.image);
-  modalImg.onerror = () => { modalImg.src = encodeURI(product.fallbackImage); };
-  modalImg.alt = product.name;
-  modalTitle.textContent = product.name;
-  modalSku.textContent = `REF: ${product.ref}`;
-  if (modalPriceUsd) modalPriceUsd.textContent = `$${product.priceUsd.toFixed(2)} USD`;
-  modalBadge.textContent = product.badge;
-  modalBadge.className = `modal-badge badge-${product.badgeType}`;
-  modalDesc.textContent = product.description;
-  modalWaBtn.href = waLink;
-
-  modal.classList.add('active');
-  modal.setAttribute('aria-hidden', 'false');
-  document.body.style.overflow = 'hidden';
 }
 
 function closeProductModal() {
@@ -2166,23 +2616,11 @@ function closeProductModal() {
   document.body.style.overflow = '';
 }
 
-function initFilters() {
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterButtons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filterValue = btn.getAttribute('data-filter');
-      renderProducts(filterValue);
-    });
-  });
-}
-
-function initNavigation() {
+function initNavbarBehavior() {
   const navbar = document.getElementById('navbar');
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const mobileDropdown = document.getElementById('mobileDropdown');
-  const mobLinks = document.querySelectorAll('.mob-link, .mob-btn-wa, .mob-btn-ig');
+  const mobLinks = document.querySelectorAll('.mob-link, .mob-btn-wa');
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 20) {
